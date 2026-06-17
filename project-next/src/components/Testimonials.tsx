@@ -11,6 +11,12 @@ const Testimonials = () => {
 
   const originalData = [
     {
+      name: "Sangat Motor Centre",
+      company: "Automotive • Patna, Bihar",
+      text: "Innvox built a stunning website for our premium car care centre — complete with a 3D configurator, slide-to-book service flow, and mobile-first design. Customers can schedule appointments in seconds and our brand finally matches the quality of service we deliver. Bookings and enquiries have grown noticeably since launch.",
+      image: "/SangatMotor.webp",
+    },
+    {
       name: "Al Harmain Islamic Institute",
       company: "Education",
       text: "InnVox built our website and managed our ads. We get 4x more leads.",

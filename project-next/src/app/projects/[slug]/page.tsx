@@ -1,5 +1,6 @@
 "use client";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -38,6 +39,34 @@ interface Project {
 }
 
 const PROJECT_DB: Record<string, Project> = {
+  "sangat-motor-centre": {
+    title: "Sangat Motor Centre",
+    industry: "Automotive",
+    tagline: "Premium Car Care & Performance — Digitally Reimagined",
+    challenge:
+      "Sangat Motor Centre, an established premium auto service centre in Patna, Bihar, relied on phone calls and walk-ins for bookings. They lacked a modern digital presence that reflected the high-end quality of their workshop and made it easy for customers to discover services or book online.",
+    solution:
+      "We designed and developed a premium automotive website with an interactive 3D car configurator, slide-to-book service UX, QR-based instant scheduling, service galleries, and a mobile-first experience optimized for local search and conversions.",
+    results: [
+      "4.9/5 Customer Rating Showcased Online",
+      "Book Service in Under 15 Seconds",
+      "5000+ Happy Customers Highlighted",
+    ],
+    images: ["/SangatMotor.webp"],
+    video: null,
+    stack: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "3D Web"],
+    liveLink: "https://sangatmotocentre.innvox.in/",
+    isConcept: false,
+    clientAbout:
+      "Sangat Motor Centre is a top-rated premium car care and performance workshop in Patna, Bihar — established in 2012. They specialize in diagnostics, repairs, detailing, and OEM-grade servicing for high-performance vehicles, trusted by thousands of customers across the region.",
+    testimonial: {
+      quote:
+        "Innvox built a stunning website for our premium car care centre — complete with a 3D configurator, slide-to-book service flow, and mobile-first design. Customers can schedule appointments in seconds and our brand finally matches the quality of service we deliver.",
+      author: "Sangat Motor Centre",
+      role: "Premium Car Care • Patna, Bihar",
+      image: "/SangatMotor.webp",
+    },
+  },
   "coaching-institute-website": {
     title: "Coaching Institute Website",
     industry: "Education",
@@ -171,7 +200,8 @@ const staggerContainer = {
 };
 
 const ProjectDetail = () => {
-  const { slug } = useParams();
+  const params = useParams();
+  const slug = params?.slug as string | undefined;
   const project = slug ? PROJECT_DB[slug] : null;
 
   if (!project) return (

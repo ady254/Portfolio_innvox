@@ -1,3 +1,4 @@
+"use client";
 
 import ContactSection from "@/components/ContactSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -59,7 +60,7 @@ const About = () => {
             {/* Right: Description */}
             <div className="flex flex-col justify-center">
               <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
-                Founded in 2025, Innvox is a modern, fully remote digital agency. While our company is fresh, our hand-picked experts each bring 5+ years of intense industry experience to the table. We operate globally without borders, delivering enterprise-grade web development, AI automation, and digital solutions to clients in Dubai, Qatar, India, and beyond.
+                Founded in 2019, InnVox is a team of developers, designers, and AI specialists working with founders and growing businesses across India, the UAE, Saudi Arabia, Qatar, Bahrain, and beyond. We build digital systems — not just websites — that work while you sleep.
               </p>
             </div>
           </div>

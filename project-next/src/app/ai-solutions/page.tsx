@@ -1,13 +1,10 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Bot, MessageSquare, ArrowRight, TrendingUp, Users, Zap } from "lucide-react";
-import { useRouter } from 'next/navigation';
-
-// import Spline from '@splinetool/react-spline';
+import Link from "next/link";
 import AIVoiceDemo from "@/components/AIVoiceDemo";
 
 const AISolutions = () => {
-  const navigate = useRouter();
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
@@ -175,12 +172,12 @@ const AISolutions = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <button
-              onClick={() => router.push('/contact')}
+            <Link
+              href="/contact"
               className="px-10 py-5 bg-black dark:bg-white text-white dark:text-black font-bold text-lg rounded-full hover:scale-105 transition-transform shadow-2xl inline-flex items-center gap-2"
             >
               Deploy Your Agent Now <ArrowRight className="w-5 h-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,10 +1,15 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mic, Volume2, Brain, Clock, ShieldCheck } from "lucide-react";
+import { Mic, Volume2, Brain, Clock, ShieldCheck, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import Spline from '@splinetool/react-spline';
 
-const AIVoiceDemo = () => {
+interface AIVoiceDemoProps {
+    learnMoreHref?: string;
+}
+
+const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
     const [status, setStatus] = useState<"idle" | "listening" | "speaking">("idle");
     const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
@@ -130,6 +135,17 @@ const AIVoiceDemo = () => {
                     <p className="text-sm text-gray-500">Expert on your specific business data.</p>
                 </div>
             </div>
+
+            {learnMoreHref && (
+                <div className="mt-12 text-center">
+                    <Link
+                        href={learnMoreHref}
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:scale-105 transition-transform shadow-xl"
+                    >
+                        Explore Full AI Solutions <ArrowRight className="w-5 h-5" />
+                    </Link>
+                </div>
+            )}
         </div>
     );
 };
