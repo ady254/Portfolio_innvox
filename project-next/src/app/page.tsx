@@ -1,20 +1,22 @@
 
 import Hero from "@/components/Hero";
+import LogoCarousel from "@/components/LogoCarousel";
 import WhoWeAre from "@/components/WhoWeAre";
 import AIVoiceDemo from "@/components/AIVoiceDemo";
 import ServicesSection from "@/components/ServicesSection";
 import Projects from "@/components/Projects";
-import Testimonials from "@/components/Testimonials";
+import { Testimonial } from "@/components/ui/design-testimonial";
 import ContactSection from "@/components/ContactSection";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <LogoCarousel />
       <WhoWeAre />
       <ServicesSection variant="home" />
       <Projects variant="home" />
-      <Testimonials />
+      <Testimonial />
 
       <section className="py-24 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
