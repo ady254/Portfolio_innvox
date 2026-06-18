@@ -56,11 +56,11 @@ const AISolutions = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">The human bottleneck</h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-              Your team is brilliant, but they can't be everywhere at once.
+              Your team is brilliant, but they can&apos;t be everywhere at once.
               <span className="text-red-500 font-semibold"> 60% of leads</span> go cold because of missed calls.
               <span className="text-red-500 font-semibold"> Customer satisfaction</span> drops after 5 minutes of waiting.
               <br /><br />
-              It's time to break the bottleneck.
+              It&apos;s time to break the bottleneck.
             </p>
           </motion.div>
         </div>

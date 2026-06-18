@@ -78,7 +78,7 @@ const About = () => {
             {/* Right: Description */}
             <div className="flex flex-col justify-center">
               <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
-                We started InnVox in 2025 because we kept seeing the same problem: good businesses running on outdated digital tools. Websites that weren't converting. Leads falling through the cracks. Teams doing manually what a bot could handle in seconds.
+                We started InnVox in 2025 because we kept seeing the same problem: good businesses running on outdated digital tools. Websites that weren&apos;t converting. Leads falling through the cracks. Teams doing manually what a bot could handle in seconds.
               </p>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 Our team has 5+ years of combined experience across web development, AI, and digital marketing. We work with clients across India and the GCC - including UAE, Saudi Arabia, Qatar, and Bahrain.
@@ -223,7 +223,7 @@ const About = () => {
           {/* Tech Stack Section */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">WE'VE WORKED WITH</p>
+              <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">WE&apos;VE WORKED WITH</p>
               <h2 className="text-4xl md:text-6xl font-black">
                 <span className="text-blue-600">AMAZING</span>{" "}
                 <span className="text-gray-900">Tech Stack</span>

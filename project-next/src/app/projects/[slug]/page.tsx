@@ -435,7 +435,7 @@ const ProjectDetail = () => {
                       />
                       <div>
                         <p className="text-xl md:text-2xl font-medium italic mb-6 leading-relaxed text-blue-50">
-                          "{project.testimonial.quote}"
+                          &quot;{project.testimonial.quote}&quot;
                         </p>
                         <div>
                           <h4 className="font-bold text-white text-lg">{project.testimonial.author}</h4>
@@ -498,7 +498,7 @@ const ProjectDetail = () => {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-black mb-6">Need a {project.industry} Solution?</h2>
           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
-            We can build a similar custom solution for your business in less than 4 weeks. Let's talk about your requirements.
+            We can build a similar custom solution for your business in less than 4 weeks. Let&apos;s talk about your requirements.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 hover:bg-blue-50 rounded-2xl font-bold text-lg shadow-xl hover:scale-105 transition-all">

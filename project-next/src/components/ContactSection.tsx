@@ -111,7 +111,7 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm font-bold uppercase tracking-widest mb-6"
           >
-            <Sparkles className="w-4 h-4" /> Let's Collaborate
+            <Sparkles className="w-4 h-4" /> Let&apos;s Collaborate
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -120,7 +120,7 @@ const ContactSection = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white leading-tight"
           >
-            Tell Us What You're{" "}
+            Tell Us What You&apos;re{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               Building.
             </span>
@@ -284,7 +284,7 @@ const ContactSection = () => {
                   <div>
                     <p className="font-bold text-green-800 dark:text-green-300 text-sm">Success!</p>
                     <p className="text-xs text-green-700 dark:text-green-400 mt-0.5 leading-relaxed">
-                      Thank you for contacting us! We've received your query and sent a confirmation email.
+                      Thank you for contacting us! We&apos;ve received your query and sent a confirmation email.
                     </p>
                   </div>
                 </motion.div>
@@ -322,7 +322,7 @@ const ContactSection = () => {
             {/* Value card / description */}
             <div className="space-y-4">
               <h3 className="text-3xl font-black text-gray-900 dark:text-white leading-tight">
-                Let's Build Something Meaningful.
+                Let&apos;s Build Something Meaningful.
               </h3>
               <p className="text-gray-500 dark:text-gray-400 text-base leading-relaxed">
                 Tell us your goals, requirements, and challenges. We turn ideas into scalable digital products that deliver real business impact.
