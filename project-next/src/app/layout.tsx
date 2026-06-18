@@ -15,9 +15,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Innvox - Digital Evolution & AI Solutions",
+  title: "InnVox - Web, AI Automation & Digital Growth",
   description:
-    "Founded in 2019. AI automation, web development, and marketing for businesses that move faster than their competition.",
+    "InnVox builds websites, AI automation, WhatsApp systems, and digital marketing for growing businesses across India and the GCC.",
+  openGraph: {
+    title: "InnVox - Web, AI Automation & Digital Growth",
+    description:
+      "Websites, AI agents, WhatsApp automation, and marketing systems for businesses across India and the GCC.",
+    url: "https://innvox.in",
+    siteName: "InnVox",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

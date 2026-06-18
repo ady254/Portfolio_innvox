@@ -55,7 +55,7 @@ const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
                     Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">InnVox AI</span>
                 </motion.h2>
                 <p className="text-gray-500 dark:text-gray-400 text-lg">
-                    Your AI-powered guide. Ask about our services, case studies, technologies, and meet our team.
+                    Got a question? Ask InnVox AI - it knows our services, process, and how we can help your business.
                 </p>
             </div>
 
@@ -121,18 +121,18 @@ const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
             <div className="grid md:grid-cols-3 gap-6 mt-16 px-4">
                 <div className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center">
                     <Brain className="w-8 h-8 text-purple-600 mb-4" />
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Empathic AI</h3>
-                    <p className="text-sm text-gray-500">Powered by advanced NLP to understand tone.</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Knows everything about us</h3>
+                    <p className="text-sm text-gray-500">Answers service, process, and project questions instantly.</p>
                 </div>
                 <div className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center">
                     <Clock className="w-8 h-8 text-blue-600 mb-4" />
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">24/7 Availability</h3>
-                    <p className="text-sm text-gray-500">Always ready to assist your customers.</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Available 24/7</h3>
+                    <p className="text-sm text-gray-500">Handles questions even when your team is offline.</p>
                 </div>
                 <div className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 flex flex-col items-center text-center">
                     <ShieldCheck className="w-8 h-8 text-green-600 mb-4" />
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Custom Training</h3>
-                    <p className="text-sm text-gray-500">Expert on your specific business data.</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Gives instant answers</h3>
+                    <p className="text-sm text-gray-500">Turns common queries into faster, cleaner conversations.</p>
                 </div>
             </div>
 

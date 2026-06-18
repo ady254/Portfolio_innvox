@@ -1,7 +1,6 @@
 "use client";
 
 import ContactSection from "@/components/ContactSection";
-import CommunitySection from "@/components/CommunitySection";
 
 
 const About = () => {
@@ -22,6 +21,18 @@ const About = () => {
     { name: "Stripe", slug: "stripe" },
     { name: "Docker", slug: "docker" },
     { name: "AWS", slug: "amazonaws" }
+  ];
+
+  const team = [
+    { name: "InnVox Strategy Team", role: "Client discovery, project planning, and growth systems" },
+    { name: "InnVox Build Team", role: "Web development, automation, integrations, and QA" },
+    { name: "InnVox AI Team", role: "Chatbots, voice agents, and workflow automation" },
+  ];
+
+  const values = [
+    { title: "Ship fast", desc: "We keep projects moving with clear timelines and focused execution." },
+    { title: "Stay honest", desc: "No vague promises. We tell you what is useful, realistic, and worth building." },
+    { title: "Measure everything", desc: "Websites, ads, and automation should connect back to leads, revenue, or saved time." },
   ];
 
 
@@ -46,21 +57,31 @@ const About = () => {
 
           {/* Company Info Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            {/* Left: Image placeholder */}
+            {/* Left: Brand panel */}
             <div className="relative">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                <img
-                  src=""
-                  alt="Office building"
-                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
-                />
+              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200 flex items-center justify-center p-10">
+                <div className="text-center">
+                  <p className="text-sm font-bold tracking-[0.2em] text-blue-600 uppercase mb-4">
+                    India + GCC
+                  </p>
+                  <p className="text-5xl md:text-6xl font-black text-gray-900 leading-none">
+                    Web.
+                    <br />
+                    AI.
+                    <br />
+                    Growth.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Right: Description */}
             <div className="flex flex-col justify-center">
               <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
-                Founded in 2019, InnVox is a team of developers, designers, and AI specialists working with founders and growing businesses across India, the UAE, Saudi Arabia, Qatar, Bahrain, and beyond. We build digital systems — not just websites — that work while you sleep.
+                We started InnVox in 2025 because we kept seeing the same problem: good businesses running on outdated digital tools. Websites that weren't converting. Leads falling through the cracks. Teams doing manually what a bot could handle in seconds.
+              </p>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                Our team has 5+ years of combined experience across web development, AI, and digital marketing. We work with clients across India and the GCC - including UAE, Saudi Arabia, Qatar, and Bahrain.
               </p>
             </div>
           </div>
@@ -167,6 +188,38 @@ const About = () => {
             </div>
           </div>
 
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">The people behind the systems</p>
+              <h2 className="text-4xl md:text-6xl font-black text-gray-900">
+                Built by focused teams
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {team.map((person) => (
+                <div key={person.name} className="p-8 border border-gray-200 bg-white rounded-lg hover:border-blue-500 transition-colors">
+                  <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center font-black text-xl mb-6">
+                    {person.name.split(" ")[1]?.[0] || "I"}
+                  </div>
+                  <h3 className="font-black text-xl text-gray-900 mb-2">{person.name}</h3>
+                  <p className="text-gray-600 leading-relaxed">{person.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-20">
+            <div className="grid md:grid-cols-3 gap-6">
+              {values.map((value) => (
+                <div key={value.title} className="p-8 bg-gray-50 border border-gray-200 rounded-lg">
+                  <h3 className="text-2xl font-black text-gray-900 mb-3">{value.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{value.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Tech Stack Section */}
           <div className="mb-20">
             <div className="text-center mb-12">
@@ -202,12 +255,6 @@ const About = () => {
             </div>
           </div>
 
-
-          {/* Community Section */}
-          <div className="mt-32">
-            <CommunitySection />
-          </div>
-
         </div>
 
         {/* Decorative circular elements */}
@@ -222,3 +269,4 @@ const About = () => {
 };
 
 export default About;
+

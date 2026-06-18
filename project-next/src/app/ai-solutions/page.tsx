@@ -24,11 +24,11 @@ const AISolutions = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-gray-900 dark:text-white mb-6 md:mb-8 tracking-tighter leading-tight">
-              The Future Isn't Coming.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">It's Listening.</span>
+              AI that works<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">while you sleep.</span>
             </h1>
             <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-12 font-light">
-              We don't just build chatbots. We create intelligent, empathetic AI agents that live on your website and phone lines, ready to scale your business 24/7.
+              We build smart systems - chatbots, automation flows, and voice agents - that handle your business operations 24/7.
             </p>
           </motion.div>
 
@@ -54,7 +54,7 @@ const AISolutions = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">The "Human Bottleneck"</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">The human bottleneck</h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
               Your team is brilliant, but they can't be everywhere at once.
               <span className="text-red-500 font-semibold"> 60% of leads</span> go cold because of missed calls.
@@ -127,48 +127,57 @@ const AISolutions = () => {
       <section className="py-24 bg-gray-50 dark:bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-4">Beyond Voice</h2>
-            <p className="text-gray-600 dark:text-gray-400">Our ecosystem extends to text, automation, and deep integration.</p>
+            <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-4">Real AI use cases</h2>
+            <p className="text-gray-600 dark:text-gray-400">Specific systems for businesses that need faster response and cleaner operations.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Chatbots Card */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-white dark:bg-gray-900 rounded-3xl p-10 border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative"
-            >
-              <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6">
-                <MessageSquare className="w-7 h-7 text-purple-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Context-Aware Chatbots</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Not just "if/then" scripts. Our bots read context, understand intent, and can even process images or documents in real-time.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <span className="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full">WhatsApp</span>
-                <span className="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full">Web</span>
-                <span className="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full">Instagram</span>
-              </div>
-            </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <MessageSquare className="w-7 h-7 text-purple-600" />,
+                title: "WhatsApp bot for dealerships",
+                desc: "Qualify vehicle enquiries, answer service questions, and route hot leads to your sales team instantly.",
+                tags: ["WhatsApp", "Lead routing", "CRM"],
+              },
+              {
+                icon: <Bot className="w-7 h-7 text-blue-600" />,
+                title: "Clinic chatbot",
+                desc: "Handle appointment questions, booking requests, reminders, and common patient FAQs without phone delays.",
+                tags: ["Bookings", "Reminders", "FAQs"],
+              },
+              {
+                icon: <Zap className="w-7 h-7 text-yellow-500" />,
+                title: "Real estate lead agent",
+                desc: "Capture buyer intent, suggest suitable properties, and send qualified leads directly to WhatsApp.",
+                tags: ["Lead capture", "Property fit", "Follow-up"],
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -10 }}
+                className="bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative"
+              >
+                <div className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mb-6">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                  {item.desc}
+                </p>
+                <div className="flex gap-2 flex-wrap">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">{tag}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-            {/* Automation Card */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-white dark:bg-gray-900 rounded-3xl p-10 border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative"
-            >
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6">
-                <Bot className="w-7 h-7 text-blue-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Workflow Automation</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Connect your AI agents directly to your CRM. When a lead is qualified, it's instantly booked in your calendar and added to Salesforce.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">Zapier</span>
-                <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">HubSpot</span>
-                <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">Notion</span>
-              </div>
-            </motion.div>
+          <div className="mt-12 bg-white dark:bg-gray-900 rounded-3xl p-8 md:p-10 border border-gray-100 dark:border-gray-800 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Data and security</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              We build on trusted AI models and connect only the business data needed for the job. Your data is never sold, and every workflow can be scoped to your approval, privacy, and access rules.
+            </p>
           </div>
 
           <div className="mt-16 text-center">

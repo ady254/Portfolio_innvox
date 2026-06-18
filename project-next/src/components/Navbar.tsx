@@ -16,7 +16,6 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   const navItems = [
-    { label: "Home", link: "/" },
     { label: "Services", link: "/services" },
     { label: "AI Solutions", link: "/ai-solutions" },
     { label: "Projects", link: "/projects" },
@@ -61,7 +60,7 @@ const Navbar = () => {
           </Link>
         </h1>
 
-        <nav className="hidden md:flex gap-8 text-gray-700 font-medium mx-auto">
+        <nav className="hidden md:flex gap-7 text-gray-700 font-medium mx-auto">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -75,6 +74,13 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-3 relative z-50">
+          <Link
+            href="/contact"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20"
+          >
+            Start a Project
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
           <button
             className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition z-50"
             onClick={() => setMobileOpen(!mobileOpen)}

@@ -23,8 +23,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "website",
       title: "Website as a Service",
       description:
-        "Launch a premium website without massive upfront costs. We design, build, host, and maintain it for you.",
-      points: ["Modern UI/UX", "Mobile-friendly", "Fast & secure"],
+        "Your site should win clients, not just exist. Fast, modern websites built to convert.",
+      points: ["Conversion-focused pages", "Mobile-first build", "Hosting & support"],
       link: "/services#website",
       color: "from-blue-500 to-blue-700",
       icon: Globe,
@@ -33,8 +33,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "ads",
       title: "Meta Ads Management",
       description:
-        "Turn ad spend into qualified leads with data-driven campaigns, creatives, and conversion tracking.",
-      points: ["Campaign setup", "Creatives", "Lead tracking"],
+        "Reach the right people, not just more people. Paid ad strategies that bring qualified leads.",
+      points: ["Campaign setup", "Creative testing", "Lead tracking"],
       link: "/services#ads",
       color: "from-purple-500 to-purple-700",
       icon: Megaphone,
@@ -43,8 +43,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "whatsapp",
       title: "WhatsApp Automation",
       description:
-        "Engage customers instantly with broadcasts, automated replies, and API-powered workflows.",
-      points: ["Broadcasts", "Automation", "API setup"],
+        "Respond to every customer, even at 2 AM. Smart flows that handle queries automatically.",
+      points: ["Instant replies", "Lead routing", "API setup"],
       link: "/services#whatsapp",
       color: "from-cyan-500 to-blue-600",
       icon: MessageCircle,
@@ -53,7 +53,7 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "maintenance",
       title: "Maintenance & Support",
       description:
-        "Stay online and secure with proactive updates, bug fixes, and reliable hosting support.",
+        "We don't disappear after launch. Ongoing updates, fixes, and scaling - we're still here.",
       points: ["Monthly updates", "Bug fixes", "Hosting support"],
       link: "/services#maintenance",
       color: "from-emerald-500 to-emerald-700",
@@ -63,8 +63,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "development",
       title: "Custom Development",
       description:
-        "Build dashboards, backends, and APIs tailored to how your business actually operates.",
-      points: ["Backend systems", "Dashboard", "APIs"],
+        "When off-the-shelf doesn't cut it. Custom dashboards, tools, and integrations built for your business.",
+      points: ["Backend systems", "Dashboards", "APIs"],
       link: "/services#development",
       color: "from-orange-500 to-red-600",
       icon: Code,
@@ -73,7 +73,7 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "chatbots",
       title: "AI Chatbots & Voice Agents",
       description:
-        "Qualify leads, answer FAQs, and handle calls 24/7 with AI trained on your business.",
+        "Stop doing manually what AI can handle. Smart agents that work while your team sleeps.",
       points: ["Lead qualification", "FAQ answers", "24/7 support"],
       link: "/ai-solutions",
       color: "from-indigo-500 to-indigo-700",
@@ -98,6 +98,7 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
   };
 
   const isHome = variant === "home";
+  const visibleServices = isHome ? services.slice(0, 3) : services;
 
   return (
     <section
@@ -142,7 +143,7 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
-          {services.map((service) => {
+          {visibleServices.map((service) => {
             const Icon = service.icon;
             return (
               <motion.div
@@ -190,6 +191,12 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
                     Learn more
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
+
+                  {!isHome && (
+                    <p className="mt-3 text-xs font-semibold text-gray-500 dark:text-gray-400">
+                      Starting from: Get a custom quote
+                    </p>
+                  )}
                 </div>
               </motion.div>
             );

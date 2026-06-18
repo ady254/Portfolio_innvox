@@ -1,5 +1,6 @@
 import React from 'react';
-import LiveClock from './LiveClock';
+import Link from 'next/link';
+import { MessageCircle } from 'lucide-react';
 
 const Footer: React.FC = () => {
     return (
@@ -20,32 +21,39 @@ const Footer: React.FC = () => {
                         <div>
                             <h4 className="font-bold mb-4">Company</h4>
                             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
-                                <li><a href="/about" className="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a></li>
-                                <li><a href="/careers" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Careers</a></li>
-                                <li><a href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a></li>
+                                <li><Link href="/about" className="hover:text-blue-600 dark:hover:text-blue-400 transition">About</Link></li>
+                                <li><Link href="/projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</Link></li>
+                                <li><Link href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-bold mb-4">Services</h4>
                             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
-                                <li><a href="/services" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Web Development</a></li>
-                                <li><a href="/services" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Marketing</a></li>
-                                <li><a href="/services" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Automation</a></li>
+                                <li><Link href="/services" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Web Development</Link></li>
+                                <li><Link href="/services" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Marketing</Link></li>
+                                <li><Link href="/ai-solutions" className="hover:text-blue-600 dark:hover:text-blue-400 transition">AI Automation</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-bold mb-4">Legal</h4>
                             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
-                                <li><a href="/privacy" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy</a></li>
-                                <li><a href="/terms" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Terms</a></li>
+                                <li><Link href="/privacy" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy</Link></li>
+                                <li><Link href="/terms" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Terms</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-bold mb-4">Follow Us</h4>
+                            <ul className="space-y-2 text-gray-500 dark:text-gray-400">
+                                <li><a href="https://www.instagram.com/innvox.in?igsh=MWd5bDMzenAxN3Z6cw%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Instagram</a></li>
+                                <li><a href="https://www.linkedin.com/company/innvox-in/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition">LinkedIn</a></li>
+                                <li>
+                                    <a href="https://wa.me/919939711942" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition">
+                                        <MessageCircle className="w-4 h-4" /> WhatsApp
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-
-                {/* Live Clock */}
-                <div className="mb-12 md:mb-20 border-t border-gray-200 dark:border-gray-800 pt-10">
-                    <LiveClock />
                 </div>
 
                 {/* Massive Typography */}

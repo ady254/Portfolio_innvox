@@ -7,7 +7,7 @@ const stats = [
   { value: "30+", label: "Projects delivered" },
   { value: "5+", label: "Years team experience" },
   { value: "5", label: "Countries served" },
-  { value: "2019", label: "Founded" },
+  { value: "2025", label: "Founded" },
 ];
 
 const countries = ["India", "UAE", "Saudi Arabia", "Qatar", "Bahrain"];
@@ -24,7 +24,7 @@ const WhoWeAre = () => {
           className="max-w-3xl mb-14 md:mb-16"
         >
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400 mb-4">
-            Section 3 · Who we are
+            Who we are
           </p>
           <div className="space-y-5 text-gray-300 text-lg leading-relaxed">
             <p>
@@ -36,7 +36,7 @@ const WhoWeAre = () => {
               We don&apos;t just build websites or run ads. We build systems —
               ones that work while you sleep.
             </p>
-            <p className="text-white font-semibold">Founded in 2019.</p>
+            <p className="text-white font-semibold">Founded in 2025.</p>
           </div>
         </motion.div>
 

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle, Loader2, AlertCircle, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const ContactSection = () => {
     phone: '',
     email: '',
     service: '',
+    country: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -43,7 +44,7 @@ const ContactSection = () => {
       }
 
       setSuccess(true);
-      setFormData({ name: '', phone: '', email: '', service: '' });
+      setFormData({ name: '', phone: '', email: '', service: '', country: '' });
 
       // Reset success message after 5 seconds
       setTimeout(() => setSuccess(false), 5000);
@@ -58,7 +59,7 @@ const ContactSection = () => {
     <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
 
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="section-title text-center">Contact Us</h2>
+        <h2 className="section-title text-center">Tell us what you're building.</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="card bg-white dark:bg-gray-800 dark:border-gray-700">
@@ -136,6 +137,27 @@ const ContactSection = () => {
                 </select>
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
+                  Country
+                </label>
+                <select
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
+                >
+                  <option value="">Select your country</option>
+                  <option value="india">India</option>
+                  <option value="uae">UAE</option>
+                  <option value="saudi-arabia">Saudi Arabia</option>
+                  <option value="qatar">Qatar</option>
+                  <option value="bahrain">Bahrain</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
@@ -174,6 +196,10 @@ const ContactSection = () => {
                   </div>
                 </div>
               )}
+
+              <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+                We reply to every message within 24 hours.
+              </p>
             </form>
           </div>
 
@@ -181,14 +207,23 @@ const ContactSection = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  Let's Work Together
+                  Let's build something useful.
                 </h3>
                 <p className="text-gray-600 text-lg leading-relaxed mb-6 dark:text-gray-300">
-                  Have a project in mind? We'd love to hear about it. Our team of experts is ready to discuss your business needs and provide customized solutions that drive real results.
+                  Tell us what you're building and what needs to improve. We'll respond within 24 hours with a clear next step.
                 </p>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Whether you're looking to launch a website, scale your ads, or automate customer interactions, we've got you covered.
+                  If it's urgent, message us directly on WhatsApp.
                 </p>
+                <a
+                  href="https://wa.me/919939711942?text=Hi%20InnVox%2C%20I%27d%20like%20to%20start%20a%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Message us on WhatsApp
+                </a>
               </div>
 
               <div className="space-y-4">
@@ -214,6 +249,7 @@ const ContactSection = () => {
                   <div>
                     <p className="font-semibold text-gray-900">Location</p>
                     <p className="text-gray-600"> New Delhi, India</p>
+                    <p className="text-gray-600">Serving India, UAE, Saudi Arabia, Qatar & Bahrain</p>
                   </div>
                 </div>
               </div>
