@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero: React.FC = () => {
   const fadeInUp: Variants = {
@@ -28,11 +29,21 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex justify-center md:hidden"
         >
-          <img
-            src="/blob.webp"
-            alt="Innvox"
-            className="w-[80%] max-w-[360px] animate-float"
-          />
+          <motion.img
+          src="/blob.webp"
+           alt="Innvox"
+            animate={{
+            y: [0, -15, 0],
+           rotate: [0, 5, 0, -5, 0],
+            scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+            ease: "easeInOut",
+  }}
+     className="w-[420px] pointer-events-none select-none"
+/>
         </motion.div>
 
         <motion.div
@@ -45,7 +56,31 @@ const Hero: React.FC = () => {
             variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-gray-900"
           >
-            We Build the Digital Systems That Grow Your Business.
+            We Build the Digital Systems 
+            <br />
+            That Grow Your
+            <br />
+
+             <span className="text-blue-600">
+              
+    <TypeAnimation
+      sequence={[
+        "Business.",
+        2000,
+        "Sales.",
+        2000,
+        "Leads.",
+        2000,
+        "Automation.",
+        2000,
+        "Revenue.",
+        2000,
+      ]}
+      wrapper="span"
+      speed={40}
+      repeat={Infinity}
+    />
+  </span>
           </motion.h1>
 
           <motion.p
