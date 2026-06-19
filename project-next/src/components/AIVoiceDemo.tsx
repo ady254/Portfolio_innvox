@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mic, Volume2, Brain, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Spline from '@splinetool/react-spline';
+import SafeSpline from "./SafeSpline";
 
 interface AIVoiceDemoProps {
     learnMoreHref?: string;
@@ -86,7 +86,7 @@ const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
 
                 {/* Spline 3D Model */}
                 <div className="relative h-[400px] w-full flex items-center justify-center mb-8 -mt-20">
-                    <Spline scene="https://prod.spline.design/Zg4pQXj0ygKIyp-F/scene.splinecode" />
+                    <SafeSpline scene="https://prod.spline.design/Zg4pQXj0ygKIyp-F/scene.splinecode" />
                     {/* Overlay to hide Spline badge */}
                     <div className="absolute bottom-2 right-2 w-36 h-12 bg-black z-50 pointer-events-none" />
                 </div>
