@@ -1,6 +1,7 @@
 "use client";
 import React, { Component, ErrorInfo, ReactNode } from "react";
-import Spline from "@splinetool/react-spline";
+import dynamic from 'next/dynamic';
+const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
 
 interface Props {
     scene: string;
