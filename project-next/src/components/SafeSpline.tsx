@@ -20,7 +20,8 @@ class SafeSpline extends Component<Props, State> {
     }
 
     public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.error("Spline runtime failed to parse timeline properties:", error, errorInfo);
+        // Silently catch the error so it doesn't trigger Next.js error overlays
+        // console.warn("Spline runtime failed to parse timeline properties.", error.message);
     }
 
     render() {
