@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -294,7 +295,7 @@ const ProjectDetail = () => {
                   <source src={project.video} />
                 </video>
               ) : (
-                <img src={project.images[0]} alt={project.title} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+                <Image src={project.images[0]} fill alt={project.title} className="object-contain transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" priority />
               )}
             </div>
 

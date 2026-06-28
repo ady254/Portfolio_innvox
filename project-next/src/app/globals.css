@@ -149,3 +149,16 @@ body {
   100% { transform: translateX(250%) skewX(-25deg); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-1,
+  .animate-orb-2,
+  .animate-orb-3,
+  .animate-particle,
+  .animate-float,
+  .animate-marquee,
+  .animate-count-pulse,
+  .animate-gradient-text {
+    animation: none !important;
+  }
+}
+

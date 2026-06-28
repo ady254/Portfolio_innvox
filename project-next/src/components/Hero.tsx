@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
@@ -43,13 +44,13 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 hero-grid-pattern opacity-60" />
 
       {/* Floating gradient orbs */}
-      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-400/20 to-indigo-400/10 blur-3xl animate-orb-1 pointer-events-none" />
-      <div className="absolute top-[30%] right-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-sky-300/15 to-blue-500/10 blur-3xl animate-orb-2 pointer-events-none" />
-      <div className="absolute bottom-[-15%] left-[30%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-indigo-300/10 to-blue-200/15 blur-3xl animate-orb-3 pointer-events-none" />
+      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-400/20 to-indigo-400/10 blur-xl md:blur-3xl animate-orb-1 pointer-events-none" />
+      <div className="absolute top-[30%] right-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-bl from-sky-300/15 to-blue-500/10 blur-xl md:blur-3xl animate-orb-2 pointer-events-none" />
+      <div className="absolute bottom-[-15%] left-[30%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-indigo-300/10 to-blue-200/15 blur-xl md:blur-3xl animate-orb-3 pointer-events-none" />
 
       {/* Floating particles */}
       {[...Array(6)].map((_, i) => (
-        <motion.div
+        <div
           key={i}
           className="absolute w-1.5 h-1.5 rounded-full bg-blue-400/30 animate-particle pointer-events-none"
           style={{
@@ -82,9 +83,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex justify-center md:hidden"
         >
-          <motion.img
-            src="/blob.webp"
-            alt="Innvox"
+          <motion.div
             animate={{
               y: [0, -15, 0],
               rotate: [0, 5, 0, -5, 0],
@@ -95,8 +94,10 @@ const Hero: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-[320px] pointer-events-none select-none drop-shadow-2xl"
-          />
+            className="relative w-[320px] h-[320px] pointer-events-none select-none drop-shadow-2xl"
+          >
+            <Image src="/blob.webp" fill alt="Innvox" className="object-contain" priority />
+          </motion.div>
         </motion.div>
 
         {/* Left: text content */}
@@ -241,9 +242,7 @@ const Hero: React.FC = () => {
             />
           </div>
 
-          <motion.img
-            src="/blob.webp"
-            alt="Innvox"
+          <motion.div
             animate={{
               y: [0, -15, 0],
               rotate: [0, 3, 0, -3, 0],
@@ -254,8 +253,10 @@ const Hero: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-[420px] pointer-events-none select-none relative z-10 drop-shadow-2xl"
-          />
+            className="relative w-[420px] h-[420px] pointer-events-none select-none z-10 drop-shadow-2xl"
+          >
+            <Image src="/blob.webp" fill alt="Innvox" className="object-contain" priority />
+          </motion.div>
         </motion.div>
       </div>
 

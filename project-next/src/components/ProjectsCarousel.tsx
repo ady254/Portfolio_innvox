@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -133,8 +134,8 @@ const ProjectsCarousel = () => {
               <SwiperSlide key={i} className="cursor-pointer">
                 <Link href={`/projects/${p.slug}`} className="block h-full">
                 <div className="card-compact bg-white dark:bg-gray-800 dark:border-gray-700 h-full hover:scale-[1.03] transition-transform block">
-                  <div className="aspect-video rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-700">
-                    <img src={p.image} className="w-full h-full object-cover" alt={p.title} />
+                  <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-700">
+                    <Image src={p.image} fill className="object-cover" alt={p.title} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                   </div>
 
                   <div className="mt-4">
