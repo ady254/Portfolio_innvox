@@ -177,7 +177,8 @@ const DepthBlurCarousel = ({
   const renderItems = useMemo(() => {
     const pool = images.length > 0 ? images : ["/blob.webp"];
     const items: string[] = [];
-    while (items.length < 18) items.push(...pool);
+    const targetCount = typeof window !== "undefined" && window.innerWidth < 768 ? 9 : 18;
+    while (items.length < targetCount) items.push(...pool);
     return items;
   }, [images]);
 
@@ -303,21 +304,11 @@ const DepthBlurCarousel = ({
 
       <div
         className="pointer-events-none absolute left-0 top-0 bottom-0 w-[20%] md:w-[25%] z-[60]"
-        style={{
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
-          maskImage: "linear-gradient(to right, black 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to right, black 0%, transparent 100%)",
-        }}
+        style={{ background: "linear-gradient(to right, rgb(248 250 252) 0%, transparent 100%)" }}
       />
       <div
         className="pointer-events-none absolute right-0 top-0 bottom-0 w-[20%] md:w-[25%] z-[60]"
-        style={{
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
-          maskImage: "linear-gradient(to left, black 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to left, black 0%, transparent 100%)",
-        }}
+        style={{ background: "linear-gradient(to left, rgb(248 250 252) 0%, transparent 100%)" }}
       />
     </div>
   );

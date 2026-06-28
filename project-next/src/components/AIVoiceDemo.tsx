@@ -3,7 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mic, Volume2, Brain, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import SafeSpline from "./SafeSpline";
+import dynamic from "next/dynamic";
+
+const SafeSpline = dynamic(() => import("./SafeSpline"), { ssr: false });
 
 interface AIVoiceDemoProps {
     learnMoreHref?: string;
@@ -11,7 +13,20 @@ interface AIVoiceDemoProps {
 
 const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
     const [status, setStatus] = useState<"idle" | "listening" | "speaking">("idle");
+    const [splineVisible, setSplineVisible] = useState(false);
+    const splineSectionRef = useRef<HTMLDivElement>(null);
     const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+    useEffect(() => {
+        const el = splineSectionRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) setSplineVisible(true); },
+            { rootMargin: "200px" }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         // Initialize speech synthesis
@@ -84,9 +99,11 @@ const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
                     </AnimatePresence>
                 </div>
 
-                {/* Spline 3D Model */}
-                <div className="relative h-[400px] w-full flex items-center justify-center mb-8 -mt-20">
-                    <SafeSpline scene="https://prod.spline.design/Zg4pQXj0ygKIyp-F/scene.splinecode" />
+                {/* Spline 3D Model — mounted only when scrolled into view */}
+                <div ref={splineSectionRef} className="relative h-[400px] w-full flex items-center justify-center mb-8 -mt-20">
+                    {splineVisible && (
+                        <SafeSpline scene="https://prod.spline.design/Zg4pQXj0ygKIyp-F/scene.splinecode" />
+                    )}
                     {/* Overlay to hide Spline badge */}
                     <div className="absolute bottom-2 right-2 w-36 h-12 bg-black z-50 pointer-events-none" />
                 </div>

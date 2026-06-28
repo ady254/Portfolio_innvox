@@ -1,12 +1,16 @@
 
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import LogoCarousel from "@/components/LogoCarousel";
-import WhoWeAre from "@/components/WhoWeAre";
-import AIVoiceDemo from "@/components/AIVoiceDemo";
-import ServicesSection from "@/components/ServicesSection";
-import Projects from "@/components/Projects";
-import { Testimonial } from "@/components/ui/design-testimonial";
-import ContactSection from "@/components/ContactSection";
+
+const WhoWeAre = dynamic(() => import("@/components/WhoWeAre"));
+const ServicesSection = dynamic(() => import("@/components/ServicesSection"));
+const Projects = dynamic(() => import("@/components/Projects"));
+const Testimonial = dynamic(() =>
+  import("@/components/ui/design-testimonial").then((m) => ({ default: m.Testimonial }))
+);
+const AIVoiceDemo = dynamic(() => import("@/components/AIVoiceDemo"));
+const ContactSection = dynamic(() => import("@/components/ContactSection"));
 
 const Home = () => {
   return (
