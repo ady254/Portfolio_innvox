@@ -14,14 +14,32 @@ interface State {
 
 class SafeSpline extends Component<Props, State> {
     public state: State = { hasError: false };
+    private originalConsoleError: typeof console.error | null = null;
 
     public static getDerivedStateFromError(_: Error): State {
         return { hasError: true };
     }
 
-    public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        // Silently catch the error so it doesn't trigger Next.js error overlays
-        // console.warn("Spline runtime failed to parse timeline properties.", error.message);
+    public componentDidMount() {
+        // Spline runtime calls console.error("Missing property") internally when
+        // it can't parse certain timeline properties in the scene. These are
+        // cosmetic parser warnings — not functional errors — but Next.js dev
+        // tools intercepts console.error and shows them as overlays. Filter them.
+        this.originalConsoleError = console.error;
+        console.error = (...args: unknown[]) => {
+            if (String(args[0] ?? '').includes('Missing property')) return;
+            this.originalConsoleError!.apply(console, args);
+        };
+    }
+
+    public componentWillUnmount() {
+        if (this.originalConsoleError) {
+            console.error = this.originalConsoleError;
+        }
+    }
+
+    public componentDidCatch(_error: Error, _errorInfo: ErrorInfo) {
+        // Catches thrown errors from Spline so they don't bubble up
     }
 
     render() {
