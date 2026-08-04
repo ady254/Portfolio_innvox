@@ -25,7 +25,7 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
       video: null,
       slug: "sangat-motor-centre",
       icon: <Car className="w-5 h-5" />,
-      liveLink: "https://sangatmotocentre.innvox.in/",
+      liveLink: "https://seashell-lion-595208.hostingersite.com/",
     },
     {
       title: "Coaching Institute Website",
@@ -237,79 +237,79 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
             </motion.div>
           </div>
         ) : (
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
-        >
-          {items.map((project) => (
-            <motion.article
-              key={project.slug}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="group relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all flex flex-col h-full"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={project.image}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt={project.title}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+          >
+            {items.map((project) => (
+              <motion.article
+                key={project.slug}
+                variants={itemVariants}
+                whileHover={{ y: -10 }}
+                className="group relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all flex flex-col h-full"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={project.image}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    alt={project.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  {project.video && (
-                    <span className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30 text-white font-bold text-sm">
-                      <Play className="w-3 h-3 fill-current" /> Demo Available
-                    </span>
-                  )}
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    {project.video && (
+                      <span className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30 text-white font-bold text-sm">
+                        <Play className="w-3 h-3 fill-current" /> Demo Available
+                      </span>
+                    )}
+                  </div>
 
-                <div className="absolute top-4 left-4">
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/50 dark:border-slate-700/50 shadow-lg">
-                    <span className="text-blue-600 dark:text-blue-400">
-                      {project.icon}
-                    </span>
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-slate-200">
-                      {project.industry}
-                    </span>
+                  <div className="absolute top-4 left-4">
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/50 dark:border-slate-700/50 shadow-lg">
+                      <span className="text-blue-600 dark:text-blue-400">
+                        {project.icon}
+                      </span>
+                      <span className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-slate-200">
+                        {project.industry}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="p-6 md:p-8 flex flex-col flex-grow">
-                <h4 className="text-xl md:text-2xl font-black text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h4>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  {project.tagline}
-                </p>
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
+                  <h4 className="text-xl md:text-2xl font-black text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h4>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                    {project.tagline}
+                  </p>
 
-                <div className="mt-auto pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-slate-100 dark:border-slate-700">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-sm uppercase tracking-widest hover:gap-4 transition-all"
-                  >
-                    Learn more <ArrowUpRight className="w-5 h-5" />
-                  </Link>
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 font-bold text-xs uppercase tracking-widest transition-colors"
+                  <div className="mt-auto pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-slate-100 dark:border-slate-700">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-sm uppercase tracking-widest hover:gap-4 transition-all"
                     >
-                      Live demo
-                    </a>
-                  )}
+                      Learn more <ArrowUpRight className="w-5 h-5" />
+                    </Link>
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 font-bold text-xs uppercase tracking-widest transition-colors"
+                      >
+                        Live demo
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
-        </motion.div>
+              </motion.article>
+            ))}
+          </motion.div>
         )}
 
         {!isHome ? (
