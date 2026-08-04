@@ -56,7 +56,7 @@ const PROJECT_DB: Record<string, Project> = {
     images: ["/SangatMotor.webp"],
     video: null,
     stack: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "3D Web"],
-    liveLink: "https://sangatmotocentre.innvox.in/",
+    liveLink: "https://seashell-lion-595208.hostingersite.com/",
     isConcept: false,
     clientAbout:
       "Sangat Motor Centre is a top-rated premium car care and performance workshop in Patna, Bihar — established in 2012. They specialize in diagnostics, repairs, detailing, and OEM-grade servicing for high-performance vehicles, trusted by thousands of customers across the region.",
