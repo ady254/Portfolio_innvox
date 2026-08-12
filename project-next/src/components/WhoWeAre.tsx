@@ -72,11 +72,7 @@ const metrics = [
   },
 ];
 
-const countries = [
-  { name: "India", flag: "🇮🇳" },
-  { name: "UAE", flag: "🇦🇪" },
-  { name: "Qatar", flag: "🇶🇦" },
-];
+
 
 const WhoWeAre = () => {
   return (
@@ -103,11 +99,10 @@ const WhoWeAre = () => {
             </span>
 
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
-              We don&apos;t just build websites.{" "}
+              Architecting the Future of{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-                We build systems
-              </span>{" "}
-              that work while you sleep.
+                Digital Commerce & AI Automation.
+              </span>
             </h2>
 
             <p className="text-gray-400 text-lg leading-relaxed">
@@ -144,65 +139,19 @@ const WhoWeAre = () => {
           })}
         </motion.div>
 
-        {/* Bottom row: countries + CTA */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          {/* Country tags */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap gap-3"
-          >
-            {countries.map((country, i) => (
-              <motion.span
-                key={country.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.05 }}
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-gray-700/60 bg-gray-900/60 backdrop-blur-sm text-sm text-gray-300 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all duration-300 group cursor-default"
-              >
-                <span className="text-base">{country.flag}</span>
-                <span className="group-hover:text-white transition-colors">{country.name}</span>
-              </motion.span>
-            ))}
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Link
-              href="/about"
-              className="group inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-bold text-sm uppercase tracking-wider transition-colors"
-            >
-              Learn more about us
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Footer note */}
+        {/* CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-12 pt-8 border-t border-gray-800/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-end mb-12"
         >
-          <p className="text-gray-500 text-sm">
-            Deploying Next-Gen Solutions for the{" "}
-            <span className="text-white font-semibold">GCC & India Markets</span>
-          </p>
           <Link
-            href="/services"
+            href="/about"
             className="group inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-bold text-sm uppercase tracking-wider transition-colors"
           >
-            Explore Our Engineering Process
+            Learn more about us
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </motion.div>

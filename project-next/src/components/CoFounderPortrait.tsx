@@ -20,8 +20,8 @@ const sizeClasses = {
 
 export default function CoFounderPortrait({
   src = "/cofounder.png",
-  name,
-  role = "Co-Founder",
+  name = "Jaeed Akhtar",
+  role = "CO-Founder & Lead Architect ",
   className = "",
   showCaption = true,
   variant = "light",
@@ -58,7 +58,10 @@ export default function CoFounderPortrait({
             </p>
           )}
           {role && (
-            <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-gray-500">
+            <p className={`mt-1 text-[11px] uppercase tracking-[0.2em] text-gray-500 ${
+                variant === "dark" ? "text-white" : "text-gray-900"
+              }`}
+            >
               {role}
             </p>
           )}

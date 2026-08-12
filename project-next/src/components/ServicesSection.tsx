@@ -21,30 +21,30 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
   const services = [
     {
       id: "website",
-      title: "Website as a Service",
+      title: "Digital Platform Engineering",
       description:
-        "Your site should win clients, not just exist. Fast, modern websites built to convert.",
-      points: ["Conversion-focused pages", "Mobile-first build", "Hosting & support"],
+        "We engineer custom, high-performance web applications that serve as the ultimate conversion engine for your brand. Zero templates, purely scalable architecture.",
+      points: ["High-Conversion UX/UI Design", "Next-Gen Tech Stack (Next.js/React)", "Managed Cloud Infrastructure"],
       link: "/services#website",
       color: "from-blue-500 to-blue-700",
       icon: Globe,
     },
     {
       id: "ads",
-      title: "Meta Ads Management",
+      title: "Data-Driven Growth Engines",
       description:
-        "Reach the right people, not just more people. Paid ad strategies that bring qualified leads.",
-      points: ["Campaign setup", "Creative testing", "Lead tracking"],
+        "Stop wasting ad spend. We build precision-targeted acquisition campaigns that drive high-intent traffic directly into your new digital platforms.",
+      points: ["Omnichannel Acquisition Strategy", "Advanced Lead Tracking & Attribution", "Conversion Rate Optimization (CRO)"],
       link: "/services#ads",
       color: "from-purple-500 to-purple-700",
       icon: Megaphone,
     },
     {
       id: "whatsapp",
-      title: "WhatsApp Automation",
+      title: "Agentic AI & Automations",
       description:
-        "Respond to every customer, even at 2 AM. Smart flows that handle queries automatically.",
-      points: ["Instant replies", "Lead routing", "API setup"],
+        "Deploy intelligent workflows that work while you sleep. We integrate custom AI agents into WhatsApp to handle lead qualification and customer success 24/7.",
+      points: ["24/7 Automated Lead Routing", "Complex CRM & API Integrations", "Conversational Sales Funnels"],
       link: "/services#whatsapp",
       color: "from-cyan-500 to-blue-600",
       icon: MessageCircle,
@@ -118,20 +118,19 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
         >
           {isHome && (
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm font-bold uppercase tracking-widest mb-6">
-              <Sparkles className="w-4 h-4" /> Our Services
+              <Sparkles className="w-4 h-4" /> CORE CAPABILITIES
             </span>
           )}
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
-            Everything Your Business Needs—
+          Architecting Systems for 
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-              Under One Roof
+            Growth & Scale.
             </span>
           </h2>
           {isHome && (
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Preview what we deliver on the homepage. Tap learn more to explore
-              full details, pricing, and how each service fits your goals.
+            We deliver end-to-end digital infrastructure. From high-speed web platforms to agentic AI workflows, we build the systems that modern enterprises need to dominate their markets.
             </p>
           )}
         </motion.div>
