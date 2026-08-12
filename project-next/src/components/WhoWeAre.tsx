@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, TrendingUp, Users, Zap, Globe2, ArrowUpRight } from "lucide-react";
+import { Users, Globe2, ArrowUpRight, Layers, Gauge } from "lucide-react";
 import Link from "next/link";
 import CoFounderPortrait from "@/components/CoFounderPortrait";
 
@@ -35,35 +35,39 @@ function useCounter(end: number, duration: number = 2000, startOnView: boolean =
 
 const metrics = [
   {
-    value: 7,
-    suffix: "+",
-    label: "Projects Delivered",
-    description: "Across 6 industries",
-    icon: TrendingUp,
+    value: 100,
+    prefix: "",
+    suffix: "%",
+    label: "Custom Architectures",
+    description: "Zero templates, fully engineered",
+    icon: Layers,
     color: "from-blue-500 to-blue-600",
   },
   {
-    value: 1,
+    value: 5,
+    prefix: "",
     suffix: "+",
-    label: "Years Experience",
-    description: "Combined team expertise",
+    label: "Years Combined Engineering Expertise",
+    description: "Across web, AI & automation",
     icon: Users,
     color: "from-indigo-500 to-indigo-600",
   },
   {
     value: 3,
+    prefix: "",
     suffix: "",
-    label: "Countries Served",
-    description: "India & GCC region",
+    label: "Strategic Global Markets",
+    description: "India, UAE, Qatar",
     icon: Globe2,
     color: "from-sky-500 to-sky-600",
   },
   {
-    value: 24,
-    suffix: "/7",
-    label: "AI Systems Running",
-    description: "Automated & always on",
-    icon: Zap,
+    value: 200,
+    prefix: "< ",
+    suffix: "ms",
+    label: "Average AI Response Time",
+    description: "Low-latency agentic systems",
+    icon: Gauge,
     color: "from-violet-500 to-violet-600",
   },
 ];
@@ -182,17 +186,25 @@ const WhoWeAre = () => {
           </motion.div>
         </div>
 
-        {/* Founded badge */}
+        {/* Footer note */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-12 pt-8 border-t border-gray-800/60"
+          className="mt-12 pt-8 border-t border-gray-800/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
         >
           <p className="text-gray-500 text-sm">
-            Founded in <span className="text-white font-semibold">2025</span> • Serving businesses across India
+            Deploying Next-Gen Solutions for the{" "}
+            <span className="text-white font-semibold">GCC & India Markets</span>
           </p>
+          <Link
+            href="/services"
+            className="group inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-bold text-sm uppercase tracking-wider transition-colors"
+          >
+            Explore Our Engineering Process
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -207,7 +219,7 @@ function MetricCard({
 }: {
   metric: (typeof metrics)[number];
   index: number;
-  Icon: typeof TrendingUp;
+  Icon: typeof Layers;
 }) {
   const { count, ref } = useCounter(metric.value, 1800);
 
@@ -218,7 +230,7 @@ function MetricCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="group relative rounded-2xl border border-gray-800 bg-gray-900/60 backdrop-blur-sm p-6 md:p-8 hover:border-gray-600 transition-all duration-500 overflow-hidden"
+      className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-6 md:p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-500 overflow-hidden shadow-lg shadow-black/20"
     >
       {/* Hover glow */}
       <div
@@ -234,6 +246,7 @@ function MetricCard({
 
       {/* Animated number */}
       <p className="text-4xl md:text-5xl font-black text-white mb-1 tabular-nums">
+        {metric.prefix}
         {count}
         <span className="text-blue-400">{metric.suffix}</span>
       </p>
