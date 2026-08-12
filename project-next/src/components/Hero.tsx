@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           <motion.div variants={wordVariants}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
-              Digital Agency — India & GCC
+              Digital Agency — India
             </span>
           </motion.div>
 
@@ -180,7 +180,7 @@ const Hero: React.FC = () => {
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-              <span className="relative z-10 font-bold text-lg">Start a Project</span>
+              <span className="relative z-10 font-bold text-lg">Book a Call</span>
               <div className="relative z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
                 <ArrowUpRight className="text-gray-900 w-5 h-5" />
               </div>

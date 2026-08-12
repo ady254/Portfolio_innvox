@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, TrendingUp, Users, Zap, Globe2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import CoFounderPortrait from "@/components/CoFounderPortrait";
 
 // Animated counter hook
 function useCounter(end: number, duration: number = 2000, startOnView: boolean = true) {
@@ -34,7 +35,7 @@ function useCounter(end: number, duration: number = 2000, startOnView: boolean =
 
 const metrics = [
   {
-    value: 30,
+    value: 7,
     suffix: "+",
     label: "Projects Delivered",
     description: "Across 6 industries",
@@ -42,7 +43,7 @@ const metrics = [
     color: "from-blue-500 to-blue-600",
   },
   {
-    value: 5,
+    value: 1,
     suffix: "+",
     label: "Years Experience",
     description: "Combined team expertise",
@@ -50,7 +51,7 @@ const metrics = [
     color: "from-indigo-500 to-indigo-600",
   },
   {
-    value: 5,
+    value: 3,
     suffix: "",
     label: "Countries Served",
     description: "India & GCC region",
@@ -70,9 +71,7 @@ const metrics = [
 const countries = [
   { name: "India", flag: "🇮🇳" },
   { name: "UAE", flag: "🇦🇪" },
-  { name: "Saudi Arabia", flag: "🇸🇦" },
   { name: "Qatar", flag: "🇶🇦" },
-  { name: "Bahrain", flag: "🇧🇭" },
 ];
 
 const WhoWeAre = () => {
@@ -86,32 +85,44 @@ const WhoWeAre = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-16 md:mb-20"
-        >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            Who we are
-          </span>
+        <div className="grid md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-center mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-[0.2em] mb-6">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+              Who we are
+            </span>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
-            We don&apos;t just build websites.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-              We build systems
-            </span>{" "}
-            that work while you sleep.
-          </h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+              We don&apos;t just build websites.{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+                We build systems
+              </span>{" "}
+              that work while you sleep.
+            </h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed">
-            InnVox is a team of developers, designers, and AI specialists. We
-            work with founders and growing businesses who need a strong digital
-            foundation — built fast, and built right.
-          </p>
-        </motion.div>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              InnVox is a team of developers, designers, and AI specialists. We
+              work with founders and growing businesses who need a strong digital
+              foundation — built fast, and built right.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex justify-center md:justify-end"
+          >
+            <CoFounderPortrait variant="dark" size="lg" role="Co-Founder" />
+          </motion.div>
+        </div>
 
         {/* Metrics bento grid */}
         <motion.div
@@ -180,7 +191,7 @@ const WhoWeAre = () => {
           className="mt-12 pt-8 border-t border-gray-800/60"
         >
           <p className="text-gray-500 text-sm">
-            Founded in <span className="text-white font-semibold">2025</span> • Serving businesses across India & the GCC
+            Founded in <span className="text-white font-semibold">2025</span> • Serving businesses across India
           </p>
         </motion.div>
       </div>

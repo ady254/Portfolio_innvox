@@ -78,7 +78,7 @@ const Navbar = () => {
             href="/contact"
             className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20"
           >
-            Start a Project
+            Book a Call
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <button
