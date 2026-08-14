@@ -216,9 +216,9 @@ const ContactSection = () => {
                     className="w-full pl-12 pr-10 py-4 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-950/40 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 focus:bg-white dark:focus:bg-gray-900 transition-all appearance-none font-medium text-sm cursor-pointer"
                   >
                     <option value="" className="dark:bg-gray-900">Select a service</option>
-                    <option value="website" className="dark:bg-gray-900">Website as a Service</option>
-                    <option value="ads" className="dark:bg-gray-900">Meta Ads Management</option>
-                    <option value="whatsapp" className="dark:bg-gray-900">WhatsApp Marketing & Automation</option>
+                    <option value="website" className="dark:bg-gray-900">Digital Platform Engineering</option>
+                    <option value="ads" className="dark:bg-gray-900">Data-Driven Growth Engines</option>
+                    <option value="whatsapp" className="dark:bg-gray-900">Agentic AI & Automations</option>
                     <option value="development" className="dark:bg-gray-900">Custom Development</option>
                     <option value="chatbot" className="dark:bg-gray-900">AI Chatbots & Voice Agents</option>
                     <option value="maintenance" className="dark:bg-gray-900">Maintenance & Support</option>
