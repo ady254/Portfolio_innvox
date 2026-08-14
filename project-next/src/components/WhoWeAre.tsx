@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Users, Globe2, ArrowUpRight, Layers, Gauge } from "lucide-react";
+import { Users, Globe2, ArrowUpRight, Briefcase, Calendar } from "lucide-react";
 import Link from "next/link";
 import CoFounderPortrait from "@/components/CoFounderPortrait";
 
@@ -35,42 +35,48 @@ function useCounter(end: number, duration: number = 2000, startOnView: boolean =
 
 const metrics = [
   {
-    value: 100,
+    value: 15,
     prefix: "",
-    suffix: "%",
-    label: "Custom Architectures",
-    description: "Zero templates, fully engineered",
-    icon: Layers,
+    suffix: "+",
+    label: "Projects delivered",
+    description: "Live products shipped for clients",
+    icon: Briefcase,
     color: "from-blue-500 to-blue-600",
+    staticDisplay: null as string | null,
   },
   {
     value: 5,
     prefix: "",
     suffix: "+",
-    label: "Years Combined Engineering Expertise",
+    label: "Years team experience",
     description: "Across web, AI & automation",
     icon: Users,
     color: "from-indigo-500 to-indigo-600",
+    staticDisplay: null as string | null,
   },
   {
-    value: 3,
+    value: 5,
     prefix: "",
     suffix: "",
-    label: "Strategic Global Markets",
-    description: "India, UAE, Qatar",
+    label: "Countries served",
+    description: "India and the GCC",
     icon: Globe2,
     color: "from-sky-500 to-sky-600",
+    staticDisplay: null as string | null,
   },
   {
-    value: 200,
-    prefix: "< ",
-    suffix: "ms",
-    label: "Average AI Response Time",
-    description: "Low-latency agentic systems",
-    icon: Gauge,
+    value: 2025,
+    prefix: "",
+    suffix: "",
+    label: "Founded",
+    description: "Building digital systems since 2025",
+    icon: Calendar,
     color: "from-violet-500 to-violet-600",
+    staticDisplay: "2025",
   },
 ];
+
+const countries = ["India", "UAE", "Saudi Arabia", "Qatar", "Bahrain"];
 
 
 
@@ -93,11 +99,6 @@ const WhoWeAre = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-[0.2em] mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-              Who we are
-            </span>
-
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
               Architecting the Future of{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
@@ -139,6 +140,24 @@ const WhoWeAre = () => {
           })}
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="flex flex-wrap gap-3 mb-12"
+        >
+          {countries.map((country) => (
+            <span
+              key={country}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/[0.04] text-sm text-gray-300"
+            >
+              <Globe2 className="w-3.5 h-3.5 text-blue-400" />
+              {country}
+            </span>
+          ))}
+        </motion.div>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -168,9 +187,9 @@ function MetricCard({
 }: {
   metric: (typeof metrics)[number];
   index: number;
-  Icon: typeof Layers;
+  Icon: typeof Briefcase;
 }) {
-  const { count, ref } = useCounter(metric.value, 1800);
+  const { count, ref } = useCounter(metric.staticDisplay ? 0 : metric.value, 1800);
 
   return (
     <motion.div
@@ -196,7 +215,7 @@ function MetricCard({
       {/* Animated number */}
       <p className="text-4xl md:text-5xl font-black text-white mb-1 tabular-nums">
         {metric.prefix}
-        {count}
+        {metric.staticDisplay ?? count}
         <span className="text-blue-400">{metric.suffix}</span>
       </p>
 

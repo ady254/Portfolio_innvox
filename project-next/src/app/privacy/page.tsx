@@ -1,184 +1,276 @@
 "use client";
-import React from 'react';
-import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Privacy = () => {
-    return (
-        <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-            <main className="max-w-4xl mx-auto px-6 pt-32 pb-20">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h1 className="text-4xl md:text-5xl font-bold mb-8 text-black dark:text-white">Privacy Policy</h1>
-                    <p className="text-gray-500 dark:text-gray-400 mb-12">Last Updated: {new Date().toLocaleDateString()}</p>
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      <main className="max-w-4xl mx-auto px-6 pt-32 pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+            Privacy Policy
+          </h1>
+          <p className="text-gray-500 mb-4">
+            Last updated: {new Date().toLocaleDateString("en-IN")}
+          </p>
+          <p className="text-sm text-blue-700 bg-blue-50 border border-blue-100 rounded-xl px-4 py-3 mb-12">
+            This policy is written to comply with the Digital Personal Data
+            Protection Act, 2023 (DPDPA) of India, and the Information
+            Technology Act, 2000.
+          </p>
 
-                    <div className="space-y-12 text-lg leading-relaxed">
-                        {/* 1. Introduction */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">1. Introduction</h2>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Innvox (“we”, “our”, “us”) is an AI, automation, and digital services agency based in India.
-                                This Privacy Policy explains how we collect, use, store, and protect your personal data when you use our website or services.
-                                <br /><br />
-                                By using Innvox services, you agree to this policy.
-                            </p>
-                        </section>
+          <div className="space-y-12 text-lg leading-relaxed">
+            <section>
+              <h2 className="text-2xl font-bold mb-4">1. Who we are (Data Fiduciary)</h2>
+              <p className="text-gray-600">
+                InnVox (“we”, “our”, “us”) is the Data Fiduciary responsible for
+                personal data collected through innvox.in and related services.
+                We are a digital agency based in New Delhi, India, offering web
+                development, AI automation, WhatsApp systems, and marketing.
+              </p>
+              <p className="text-gray-600 mt-4">
+                Contact for privacy requests:{" "}
+                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
+                  connect@innvox.in
+                </a>
+              </p>
+            </section>
 
-                        {/* 2. Information We Collect */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">2. Information We Collect</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">We may collect:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                                <li><strong>Personal details:</strong> Name, email, phone number, company name</li>
-                                <li><strong>Technical data:</strong> IP address, browser type, device info</li>
-                                <li><strong>Usage data:</strong> Pages visited, interactions, time spent</li>
-                                <li><strong>Communication data:</strong> Forms, emails, WhatsApp, chatbot messages</li>
-                            </ul>
-                            <p className="mt-4 text-gray-600 dark:text-gray-300">We only collect data that is necessary for service delivery.</p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">2. Notice before collection</h2>
+              <p className="text-gray-600 mb-4">
+                Before or at the time we collect personal data, we tell you:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>What data we collect</li>
+                <li>Why we collect it (specified purpose)</li>
+                <li>How you can withdraw consent</li>
+                <li>How to complain or contact our grievance officer</li>
+              </ul>
+            </section>
 
-                        {/* 3. How We Use Your Data */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">3. How We Use Your Data</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Your data is used to:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                                <li>Provide and improve our services</li>
-                                <li>Communicate regarding inquiries or projects</li>
-                                <li>Enable automation, AI chatbots, and analytics</li>
-                                <li>Maintain platform security and prevent misuse</li>
-                                <li>Marketing purposes (only with consent)</li>
-                            </ul>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">3. Personal data we collect</h2>
+              <p className="text-gray-600 mb-4">
+                We collect only what is needed to respond to you and deliver our
+                services (data minimisation):
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>
+                  <strong>Inquiry data:</strong> name, email, phone number,
+                  country/location, service interest, and message content
+                </li>
+                <li>
+                  <strong>Project data:</strong> business details you share so we
+                  can scope and deliver work
+                </li>
+                <li>
+                  <strong>Communication data:</strong> emails, WhatsApp messages,
+                  and call notes related to your inquiry
+                </li>
+                <li>
+                  <strong>Technical data:</strong> IP address, browser type, and
+                  basic usage logs needed for security and site performance
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-600">
+                We do not collect special category or children’s data through
+                this website. Our services are intended for persons aged 18 and
+                above.
+              </p>
+            </section>
 
-                        {/* 4. Data Sharing */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">4. Data Sharing</h2>
-                            <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                                <p><strong>Innvox:</strong></p>
-                                <div className="pl-4 border-l-2 border-gray-200 dark:border-gray-700">
-                                    <p className="mb-2">❌ Does not sell personal data</p>
-                                    <p>✅ May share data with trusted third parties such as:</p>
-                                    <ul className="list-disc pl-6 mt-2 space-y-1">
-                                        <li>Hosting providers</li>
-                                        <li>Analytics tools</li>
-                                        <li>Payment gateways</li>
-                                        <li>API platforms (Meta, WhatsApp, cloud services)</li>
-                                    </ul>
-                                </div>
-                                <p>All partners follow standard security practices.</p>
-                            </div>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">4. Purpose of processing</h2>
+              <p className="text-gray-600 mb-4">
+                We use personal data only for these specified purposes:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Responding to project inquiries and scheduling calls</li>
+                <li>Preparing proposals, contracts, and delivering services</li>
+                <li>Sending project-related communication you requested</li>
+                <li>Securing our website and preventing abuse</li>
+                <li>
+                  Marketing only if you separately consent (you may refuse)
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-600">
+                We do not use contact-form data for unrelated profiling, sale, or
+                advertising without a new, specific consent.
+              </p>
+            </section>
 
-                        {/* 5. Data Security */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">5. Data Security</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">We implement reasonable security measures including:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                                <li>Secure servers</li>
-                                <li>Access control</li>
-                                <li>Encryption where applicable</li>
-                                <li>Regular monitoring</li>
-                            </ul>
-                            <p className="mt-4 text-gray-600 dark:text-gray-300">However, no online system is 100% secure.</p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">5. Legal basis — consent</h2>
+              <p className="text-gray-600 mb-4">
+                For website inquiry forms, processing is based on your consent.
+                Consent must be free, specific, informed, unconditional, and
+                unambiguous. By ticking the consent box and submitting the form,
+                you agree that InnVox may process the details you entered to
+                reply to you.
+              </p>
+              <p className="text-gray-600">
+                You may withdraw consent at any time by emailing{" "}
+                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
+                  connect@innvox.in
+                </a>
+                . Withdrawal does not affect processing already completed
+                lawfully before the withdrawal.
+              </p>
+            </section>
 
-                        {/* 6. Cookies */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">6. Cookies</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">We use cookies for:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                                <li>Website functionality</li>
-                                <li>Analytics</li>
-                                <li>Performance tracking</li>
-                            </ul>
-                            <p className="mt-4 text-gray-600 dark:text-gray-300">You can disable cookies in your browser settings.</p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">6. How inquiry data is sent</h2>
+              <p className="text-gray-600">
+                When you submit the contact form, your details are placed into
+                an email addressed to InnVox (
+                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
+                  connect@innvox.in
+                </a>
+                ) so we can read and reply. That email is sent through your
+                device’s email application. We do not sell this information.
+              </p>
+            </section>
 
-                        {/* 7. User Rights */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">7. User Rights</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">You have the right to:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                                <li>Access your data</li>
-                                <li>Request correction or deletion</li>
-                                <li>Withdraw consent</li>
-                                <li>Request data details</li>
-                            </ul>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">7. Sharing with others</h2>
+              <p className="text-gray-600 mb-4">
+                InnVox does not sell personal data. We may share data only with:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Team members who need it to respond or deliver the project</li>
+                <li>
+                  Service providers acting as Data Processors (hosting, email,
+                  analytics) under confidentiality and purpose limits
+                </li>
+                <li>Authorities if required by Indian law</li>
+              </ul>
+            </section>
 
-                        {/* 8. Children’s Privacy */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">8. Children’s Privacy</h2>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Innvox does not knowingly collect data from individuals under 13 years of age.
-                            </p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">8. Storage, security and retention</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Access to inquiry emails is limited to authorised InnVox staff</li>
+                <li>We use HTTPS on innvox.in so data in transit is encrypted</li>
+                <li>
+                  We keep inquiry data only as long as needed to respond, deliver
+                  services, meet legal records, or until you ask us to erase it
+                </li>
+                <li>
+                  After the purpose is complete, we delete or anonymise data
+                  unless a law requires us to keep it
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-600">
+                No method of electronic storage is perfectly secure. We take
+                reasonable safeguards as required of a Data Fiduciary under DPDPA.
+              </p>
+            </section>
 
-                        {/* GDPR + DPDP Compliance */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">9. Data Protection & Compliance</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Innvox complies with:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 mb-4">
-                                <li>Digital Personal Data Protection Act, 2023 (India)</li>
-                                <li>Information Technology Act, 2000</li>
-                                <li>GDPR (for EU users) where applicable</li>
-                            </ul>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">We ensure that:</p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 mb-4">
-                                <li>Data is collected for lawful purposes only</li>
-                                <li>Users can request access, correction, or deletion</li>
-                                <li>Data is stored securely</li>
-                                <li>Data is processed with consent or legitimate interest</li>
-                            </ul>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                EU users may exercise GDPR rights by contacting us at <a href="mailto:support@innvox.in" className="text-blue-600 hover:underline">support@innvox.in</a>.
-                            </p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">9. Your rights as a Data Principal</h2>
+              <p className="text-gray-600 mb-4">
+                Under DPDPA, you have the right to:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Access a summary of personal data we hold about you</li>
+                <li>Ask for correction of inaccurate or incomplete data</li>
+                <li>Ask for erasure of data that is no longer needed</li>
+                <li>Withdraw consent</li>
+                <li>Nominate another person to exercise rights in case of death or incapacity</li>
+                <li>Raise a grievance with us, and then with the Data Protection Board of India if unresolved</li>
+              </ul>
+              <p className="mt-4 text-gray-600">
+                Send requests to{" "}
+                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
+                  connect@innvox.in
+                </a>
+                . We aim to respond within a reasonable period, and in any case
+                without undue delay.
+              </p>
+            </section>
 
-                        {/* International Clients */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">10. International Users</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">
-                                Innvox operates from India. If you access our services from outside India, you understand and agree that:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                                <li>Your data may be processed and stored in India or other jurisdictions</li>
-                                <li>Local laws may differ from your country’s laws</li>
-                                <li>You are responsible for compliance with local regulations</li>
-                            </ul>
-                            <p className="mt-4 text-gray-600 dark:text-gray-300">
-                                By using Innvox services, you consent to cross-border data transfer as permitted by law.
-                            </p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">10. Children</h2>
+              <p className="text-gray-600">
+                InnVox does not knowingly process personal data of children
+                (under 18 years) through this website. If you believe we have
+                received such data, contact us and we will delete it.
+              </p>
+            </section>
 
-                        {/* Policy Updates */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">11. Policy Updates</h2>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                We may update this policy periodically. Changes will be reflected on this page.
-                            </p>
-                        </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">11. Cross-border transfer</h2>
+              <p className="text-gray-600">
+                InnVox is based in India. If tools we use store data outside
+                India, we will do so only as permitted under DPDPA, including
+                any government restrictions on transfer to specified countries.
+                By submitting an inquiry you understand your data may be
+                processed in India.
+              </p>
+            </section>
 
+            <section>
+              <h2 className="text-2xl font-bold mb-4">12. Cookies</h2>
+              <p className="text-gray-600 mb-4">
+                We may use essential cookies for site function and, where used,
+                analytics cookies to understand page performance. You can block
+                cookies in your browser. Analytics cookies that identify you
+                will not run without a lawful basis.
+              </p>
+            </section>
 
-                        {/* Contact */}
-                        <section>
-                            <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">12. Contact</h2>
-                            <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    <span className="block mb-2"> <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">support@innvox.in</a></span>
-                                    <span className="block"> <a href="https://innvox.in" className="text-blue-600 hover:underline">https://innvox.in</a></span>
-                                </p>
-                            </div>
-                        </section>
-                    </div>
-                </motion.div>
-            </main>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">13. Grievance Officer</h2>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 text-gray-600">
+                <p className="font-semibold text-gray-900 mb-2">Grievance Officer — InnVox</p>
+                <p>Email: <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">connect@innvox.in</a></p>
+                <p>Address: New Delhi, India</p>
+                <p className="mt-3 text-sm">
+                  If you are not satisfied after we respond, you may approach
+                  the Data Protection Board of India as provided under DPDPA.
+                </p>
+              </div>
+            </section>
 
-        </div>
-    );
+            <section>
+              <h2 className="text-2xl font-bold mb-4">14. Policy updates</h2>
+              <p className="text-gray-600">
+                We may update this policy when our practices or the law change.
+                The “Last updated” date at the top will change. Continued use of
+                the website after an update means you should review the new
+                notice. Material changes to how we process data already
+                collected will be communicated where required.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">15. Contact</h2>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 text-gray-600">
+                <p>
+                  InnVox ·{" "}
+                  <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
+                    connect@innvox.in
+                  </a>
+                </p>
+                <p>
+                  Website:{" "}
+                  <Link href="/" className="text-blue-600 hover:underline">
+                    https://innvox.in
+                  </Link>
+                </p>
+              </div>
+            </section>
+          </div>
+        </motion.div>
+      </main>
+    </div>
+  );
 };
 
 export default Privacy;

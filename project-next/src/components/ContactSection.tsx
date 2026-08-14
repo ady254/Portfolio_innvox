@@ -16,8 +16,32 @@ import {
   Send,
   Calendar,
   Clock,
-  ArrowRight
+  ArrowRight,
+  ShieldCheck,
+  Lock,
+  Scale
 } from 'lucide-react';
+import Link from 'next/link';
+
+const CONTACT_EMAIL = "connect@innvox.in";
+
+const SERVICE_LABELS: Record<string, string> = {
+  website: "Digital Platform Engineering",
+  ads: "Data-Driven Growth Engines",
+  whatsapp: "Agentic AI & Automations",
+  development: "Custom Development",
+  chatbot: "AI Chatbots & Voice Agents",
+  maintenance: "Maintenance & Support",
+};
+
+const COUNTRY_LABELS: Record<string, string> = {
+  india: "India",
+  uae: "UAE",
+  "saudi-arabia": "Saudi Arabia",
+  qatar: "Qatar",
+  bahrain: "Bahrain",
+  other: "Other Region",
+};
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +51,7 @@ const ContactSection = () => {
     service: '',
     country: '',
   });
+  const [consent, setConsent] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -38,37 +63,42 @@ const ContactSection = () => {
     setError(''); // Clear error on input change
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
     setError('');
     setSuccess(false);
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit form');
-      }
-
-      setSuccess(true);
-      setFormData({ name: '', phone: '', email: '', service: '', country: '' });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setSuccess(false), 5000);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
-    } finally {
-      setLoading(false);
+    if (!consent) {
+      setError("Please accept the privacy notice to continue. This consent is required under India’s DPDPA, 2023.");
+      return;
     }
+
+    setLoading(true);
+
+    const serviceLabel = SERVICE_LABELS[formData.service] || formData.service;
+    const countryLabel = COUNTRY_LABELS[formData.country] || formData.country;
+    const subject = `New project inquiry from ${formData.name}`;
+    const body = [
+      "Hello InnVox,",
+      "",
+      "I would like to start a project. Here are my details:",
+      "",
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Service: ${serviceLabel}`,
+      `Location: ${countryLabel}`,
+      "",
+      "I consent to InnVox processing this information to respond to my inquiry, in line with the InnVox Privacy Policy and the Digital Personal Data Protection Act, 2023.",
+      "",
+      "Thank you.",
+    ].join("\n");
+
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
+    setSuccess(true);
+    setLoading(false);
   };
 
   const formSteps = [
@@ -253,10 +283,34 @@ const ContactSection = () => {
                 </div>
               </div>
 
+              <label className="flex items-start gap-3 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => {
+                    setConsent(e.target.checked);
+                    setError("");
+                  }}
+                  required
+                  className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+                <span className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  I consent to InnVox collecting and using my name, email, phone, location, and project details solely to respond to this inquiry. I can withdraw consent anytime by emailing{" "}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-blue-600 hover:underline">
+                    {CONTACT_EMAIL}
+                  </a>
+                  . Read our{" "}
+                  <Link href="/privacy" className="text-blue-600 font-semibold hover:underline">
+                    Privacy Policy
+                  </Link>{" "}
+                  (DPDPA, 2023).
+                </span>
+              </label>
+
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || !consent}
                 className="w-full relative group overflow-hidden bg-blue-600 hover:bg-blue-700 text-white font-bold text-base py-4 rounded-2xl transition-all shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <div className="absolute inset-0 w-1/2 bg-white/20 skew-x-[-25deg] -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none" />
@@ -283,7 +337,7 @@ const ContactSection = () => {
                   <div>
                     <p className="font-bold text-green-800 dark:text-green-300 text-sm">Success!</p>
                     <p className="text-xs text-green-700 dark:text-green-400 mt-0.5 leading-relaxed">
-                      Thank you for contacting us! We&apos;ve received your query and sent a confirmation email.
+                      Your email app should open with this inquiry pre-filled. Send it to reach us at {CONTACT_EMAIL}.
                     </p>
                   </div>
                 </motion.div>
@@ -304,8 +358,19 @@ const ContactSection = () => {
                 </motion.div>
               )}
 
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-[11px] font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wide">
+                  <Lock className="w-3 h-3" /> Data secured
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-[11px] font-bold text-blue-700 dark:text-blue-300 uppercase tracking-wide">
+                  <ShieldCheck className="w-3 h-3" /> Encrypted in transit
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-[11px] font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wide">
+                  <Scale className="w-3 h-3" /> DPDPA 2023
+                </span>
+              </div>
               <p className="text-center text-xs text-gray-400 dark:text-gray-500 font-medium">
-                🔒 Your data is fully secured. We respond to every inquiry within 24 hours.
+                We only use this form to reply to you. No selling of personal data. We respond within 24 hours.
               </p>
             </form>
           </motion.div>
@@ -402,7 +467,7 @@ const ContactSection = () => {
                 <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Email Us</p>
-                  <a href="mailto:connect@innvox.in" className="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors mt-0.5 block">
+                  <a href="mailto:innvox.in.official@gmail.com" className="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors mt-0.5 block">
                     connect@innvox.in
                   </a>
                 </div>

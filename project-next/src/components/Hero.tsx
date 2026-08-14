@@ -1,23 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-// import Image from "next/image";
+import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion, Variants, AnimatePresence } from "framer-motion";
-
-const rotatingWords = ["Agentic AI.", "Smart Automation.", "Web Platforms.", "Workflow AI.", "Revenue Growth."];
+import { Typewriter } from "react-simple-typewriter";
+import { motion, Variants } from "framer-motion";
 
 const Hero: React.FC = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
   const containerVariants: Variants = {
     hidden: {},
     visible: {
@@ -105,20 +94,22 @@ const Hero: React.FC = () => {
               ))}
             </div>
 
-            {/* Animated rotating word */}
-            <div className="h-[1.2em] relative overflow-hidden mt-1">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={rotatingWords[currentWordIndex]}
-                  initial={{ y: 50, opacity: 0, rotateX: -45 }}
-                  animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                  exit={{ y: -50, opacity: 0, rotateX: 45 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-0 right-0 w-full text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 animate-gradient-text"
-                >
-                  {rotatingWords[currentWordIndex]}
-                </motion.span>
-              </AnimatePresence>
+            <div className="mt-1 min-h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700">
+              <Typewriter
+                words={[
+                  "Agentic AI.",
+                  "Smart Automation.",
+                  "Web Platforms.",
+                  "Workflow AI.",
+                  "Revenue Growth.",
+                ]}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={40}
+                delaySpeed={1800}
+              />
             </div>
           </div>
 
