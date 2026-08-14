@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const CONTACT_EMAIL = "connect@innvox.in";
+const CONTACT_EMAIL = "innvox.in.official@gmail.com";
 
 const SERVICE_LABELS: Record<string, string> = {
   website: "Digital Platform Engineering",
@@ -468,7 +468,7 @@ const ContactSection = () => {
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Email Us</p>
                   <a href="mailto:innvox.in.official@gmail.com" className="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors mt-0.5 block">
-                    connect@innvox.in
+                    innvox.in.official@gmail.com
                   </a>
                 </div>
               </div>

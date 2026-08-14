@@ -145,10 +145,10 @@ const Navbar = () => {
                   Terms
                 </Link>
                 <a
-                  href="mailto:hello@innvox.in"
+                  href="mailto:innvox.in.official@gmail.com"
                   className="hover:text-gray-900 transition"
                 >
-                  hello@innvox.in
+                  innvox.in.official@gmail.com
                 </a>
               </div>
             </motion.div>

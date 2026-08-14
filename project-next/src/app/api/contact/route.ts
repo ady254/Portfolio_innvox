@@ -110,7 +110,7 @@ export async function POST(req: NextRequest) {
             <div style="margin-top: 28px; text-align: center;">
               <a href="https://wa.me/919939711942" style="display: inline-block; background: #16a34a; color: white; text-decoration: none; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 15px;">Chat on WhatsApp for faster reply</a>
             </div>
-            <p style="margin-top: 24px; font-size: 13px; color: #94a3b8; text-align: center;">InnVox &middot; connect@innvox.in &middot; +91 9939 711942</p>
+            <p style="margin-top: 24px; font-size: 13px; color: #94a3b8; text-align: center;">InnVox &middot; innvox.in.official@gmail.com &middot; +91 9939 711942</p>
           </div>
         </div>
       `,

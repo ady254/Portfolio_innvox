@@ -35,8 +35,8 @@ const Privacy = () => {
               </p>
               <p className="text-gray-600 mt-4">
                 Contact for privacy requests:{" "}
-                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
-                  connect@innvox.in
+                <a href="mailto:innvox.in.official@gmail.com" className="text-blue-600 hover:underline">
+                  innvox.in.official@gmail.com
                 </a>
               </p>
             </section>
@@ -116,8 +116,8 @@ const Privacy = () => {
               </p>
               <p className="text-gray-600">
                 You may withdraw consent at any time by emailing{" "}
-                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
-                  connect@innvox.in
+                <a href="mailto:innvox.in.official@gmail.com" className="text-blue-600 hover:underline">
+                  innvox.in.official@gmail.com
                 </a>
                 . Withdrawal does not affect processing already completed
                 lawfully before the withdrawal.
@@ -129,8 +129,8 @@ const Privacy = () => {
               <p className="text-gray-600">
                 When you submit the contact form, your details are placed into
                 an email addressed to InnVox (
-                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
-                  connect@innvox.in
+                <a href="mailto:innvox.in.official@gmail.com" className="text-blue-600 hover:underline">
+                  innvox.in.official@gmail.com
                 </a>
                 ) so we can read and reply. That email is sent through your
                 device’s email application. We do not sell this information.
@@ -187,8 +187,8 @@ const Privacy = () => {
               </ul>
               <p className="mt-4 text-gray-600">
                 Send requests to{" "}
-                <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
-                  connect@innvox.in
+                <a href="mailto:innvox.in.official@gmail.com" className="text-blue-600 hover:underline">
+                  innvox.in.official@gmail.com
                 </a>
                 . We aim to respond within a reasonable period, and in any case
                 without undue delay.
@@ -229,7 +229,7 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold mb-4">13. Grievance Officer</h2>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 text-gray-600">
                 <p className="font-semibold text-gray-900 mb-2">Grievance Officer — InnVox</p>
-                <p>Email: <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">connect@innvox.in</a></p>
+                <p>Email: <a href="mailto:innvox.in.official@gmail.com" className="text-blue-600 hover:underline">innvox.in.official@gmail.com</a></p>
                 <p>Address: New Delhi, India</p>
                 <p className="mt-3 text-sm">
                   If you are not satisfied after we respond, you may approach
@@ -254,8 +254,8 @@ const Privacy = () => {
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 text-gray-600">
                 <p>
                   InnVox ·{" "}
-                  <a href="mailto:connect@innvox.in" className="text-blue-600 hover:underline">
-                    connect@innvox.in
+                  <a href="mailto:innvox.in.official@gmail.com" className="text-blue-600 hover:underline">
+                    innvox.in.official@gmail.com
                   </a>
                 </p>
                 <p>

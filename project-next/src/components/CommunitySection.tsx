@@ -154,10 +154,10 @@ const CommunitySection = () => {
                 <Link2 className="w-4 h-4" /> innvox.in
               </a>
               <a
-                href="mailto:info@innvox.in"
+                href="mailto:innvox.in.official@gmail.com"
                 className="inline-flex items-center gap-2 hover:text-blue-600 transition-colors"
               >
-                <Mail className="w-4 h-4" /> info@innvox.in
+                <Mail className="w-4 h-4" /> innvox.in.official@gmail.com
               </a>
             </motion.div>
 
