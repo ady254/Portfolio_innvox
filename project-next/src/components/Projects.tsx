@@ -78,6 +78,16 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
       liveLink: "https://hygienaofficial.com/",
     },
     {
+      title: "Minara Gifting Store",
+      industry: "E-commerce",
+      tagline: "Full e-commerce platform & payment integration scaled from Instagram",
+      image: "/Ecom.webp",
+      video: null,
+      slug: "minara-gifting-ecommerce",
+      icon: <Globe className="w-5 h-5" />,
+      liveLink: "https://www.minaragifting.com/",
+    },
+    {
       title: "Gym Management App",
       industry: "Fitness",
       tagline: "100% automated billing and member retention",

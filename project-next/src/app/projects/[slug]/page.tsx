@@ -169,6 +169,26 @@ const PROJECT_DB: Record<string, Project> = {
     }
 
   },
+  "minara-gifting-ecommerce": {
+    title: "Minara Gifting Store",
+    industry: "E-commerce",
+    tagline: "From Instagram Selling to a Complete Automated E-Commerce Web Platform",
+    challenge: "Minara Gifting previously operated and sold custom gifting products primarily through Instagram DMs, making order management, payment tracking, and scaling operational processes highly manual.",
+    solution: "We built a full e-commerce web application complete with a modern online storefront, integrated online payment processing, and a robust admin management portal for inventory, orders, and fulfillment.",
+    results: ["100% Automated Storefront & Payment Processing", "Full Admin Portal for Inventory & Order Management", "Seamless Transition from Instagram Selling to Web Store"],
+    images: ["/Ecom.webp"],
+    video: null,
+    stack: ["Next.js", "React", "Tailwind CSS", "Node.js", "Payment Gateways"],
+    liveLink: "https://www.minaragifting.com/",
+    isConcept: false,
+    clientAbout: "Minara Gifting is a popular online custom gifting store. Innvox built their complete web application from front-end store to back-end administration and payment gateway integrations.",
+    testimonial: {
+      quote: "Innvox built our full e-commerce web application from store to admin panel to online payment integrations. Transitioning our products from Instagram to a dedicated online store has transformed our business.",
+      author: "Minara Gifting",
+      role: "E-Commerce • minaragifting.com",
+      image: "/innvox-favicon.svg"
+    }
+  },
   "gym-management-app": {
     title: "Gym Management App",
     industry: "Fitness",

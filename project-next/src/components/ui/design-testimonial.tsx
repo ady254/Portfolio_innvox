@@ -25,6 +25,13 @@ const testimonials = [
     company: "Hygiena",
   },
   {
+    quote: "Innvox built our full e-commerce web application from store to admin panel to online payment integrations. Transitioning our products from Instagram to a dedicated online store has transformed our business.",
+    author: "Minara Gifting",
+    role: "E-Commerce • Gifting",
+    company: "Minara Gifting",
+    link: "https://www.minaragifting.com/",
+  },
+  {
     quote: "Working with Innvox was a smooth and professional experience. They built a modern education platform with all the features we needed.",
     author: "Aaysha International Institute",
     role: "Education",
@@ -149,10 +156,22 @@ export function Testimonial() {
                     transition={{ duration: 0.4 }}
                     className="mb-8"
                   >
-                    <span className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground border border-border rounded-full px-3 py-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                      {current.company}
-                    </span>
+                    {"link" in current && current.link ? (
+                      <a
+                        href={current.link as string}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground border border-border rounded-full px-3 py-1 hover:text-blue-600 hover:border-blue-400 transition-colors"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                        {current.company} ↗
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground border border-border rounded-full px-3 py-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                        {current.company}
+                      </span>
+                    )}
                   </motion.div>
                 </AnimatePresence>
 
