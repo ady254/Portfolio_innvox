@@ -1,0 +1,54 @@
+# InnVox — Digital Engineering & AI Automation Agency
+
+> InnVox builds custom web applications, agentic AI voice/chat automations, WhatsApp growth systems, and precision digital marketing for businesses across India and the GCC (UAE, Saudi Arabia, Qatar, Bahrain).
+
+## Core Capabilities & Services
+
+1. **Custom Web Application Development**:
+   - High-performance Next.js & React web applications.
+   - E-commerce stores, custom admin panels, inventory management, and online payment integrations.
+   - Sub-second page loads, mobile-first UX, and 3D web features.
+
+2. **Agentic AI & Voice Automation**:
+   - 24/7 AI Voice Agents for instant phone enquiry handling.
+   - Smart WhatsApp & Website chatbots for automated lead qualification.
+   - Custom workflow automations using OpenAI API, Twilio, and CRM integrations.
+
+3. **WhatsApp Marketing & CRM Automation**:
+   - Direct lead capture from Meta ads into WhatsApp.
+   - Automated broadcast messaging, appointment reminders, and order updates.
+
+4. **Digital Marketing & Growth**:
+   - High-ROI Meta Ads management (Instagram & Facebook).
+   - Local SEO optimization and conversion rate optimization (CRO).
+
+## Regions Served
+
+- **India**: New Delhi, Patna, Mumbai, Bangalore, Pan-India.
+- **GCC Region**: United Arab Emirates (Dubai, Abu Dhabi), Saudi Arabia (Riyadh, Jeddah), Qatar (Doha), Bahrain.
+
+## Verified Client Case Studies
+
+- **Minara Gifting** (https://www.minaragifting.com/): Scaled from Instagram DM selling to a complete custom e-commerce web application with admin portal and automated payment integrations.
+- **Sangat Motor Centre** (Patna, Bihar): Premium car care platform featuring a 3D car configurator and 15-second slide-to-book service flow.
+- **Al Harmain Islamic Institute**: Student enquiry portal and automated lead capture system resulting in 4x lead growth.
+- **Hygiena** (https://hygienaofficial.com/): E-commerce store with 50% lower cart abandonment rate.
+
+## Pricing Models & Service Options
+
+- **Website as a Service (WaaS)**: Monthly subscription plans starting from ₹9,999/month ($120 USD) for turn-key website development, maintenance, and automation.
+- **Custom Project Engineering**: Fixed milestone-based quotes for complex web platforms and AI agents.
+
+## Technical Stack
+
+- **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS, Framer Motion, Three.js / Spline 3D.
+- **Backend & Database**: Node.js, Python, PostgreSQL, Supabase, Firebase, MongoDB.
+- **AI & Messaging**: OpenAI API, Twilio, WhatsApp Business API.
+- **Cloud & DevOps**: Vercel, AWS, Docker.
+
+## Contact Information
+
+- **Website**: https://innvox.in
+- **Email**: innvox.in.official@gmail.com
+- **Phone / WhatsApp**: +91 9939 711942
+- **Address**: New Delhi, India

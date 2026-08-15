@@ -1,0 +1,52 @@
+# InnVox Complete Technical & Service Documentation
+
+InnVox is a next-generation digital engineering agency operating from India and serving client organizations across India and the Gulf Cooperation Council (GCC) countries (UAE, Saudi Arabia, Qatar, Bahrain).
+
+## Detailed Offerings
+
+### 1. Web Application & E-commerce Development
+InnVox specializes in modern full-stack web applications using Next.js 16 (App Router), React, TypeScript, and Tailwind CSS.
+- **E-commerce Solutions**: Direct-to-consumer store fronts, custom product catalogs, admin management dashboards, order status tracking, and secure online payment gateway integrations (Stripe, Razorpay, local regional gateways).
+- **Service & Booking Systems**: Interactive 3D product configurators, slide-to-book appointment flows, QR code scheduling, and instant WhatsApp booking notifications.
+- **Performance Standards**: Sub-second page load times, 100% responsive layouts, accessible semantic markup, and dynamic SEO metadata.
+
+### 2. Agentic AI & Voice Automation
+InnVox designs autonomous AI workflows that run 24/7.
+- **AI Voice Agents**: Autonomous phone inquiry systems capable of natural conversation, lead qualification, and calendar booking via Twilio and OpenAI API.
+- **Conversational Chatbots**: Custom-trained AI assistants deployed on websites and WhatsApp to handle client FAQs, gather requirements, and sync qualified leads directly to CRMs.
+- **Workflow Automation**: Internal tool integrations connecting lead channels to WhatsApp, email triggers, and administrative dashboards.
+
+### 3. WhatsApp Growth & Meta Ads
+- **WhatsApp Marketing**: Direct lead capture from Instagram/Facebook ads into automated WhatsApp chat flows.
+- **Meta Advertising**: End-to-end ad creative design, audience targeting, campaign management, and conversion rate optimization (CRO).
+
+## Detailed Client Case Studies
+
+1. **Minara Gifting Store** (`/projects/minara-gifting-ecommerce`)
+   - **URL**: https://www.minaragifting.com/
+   - **Industry**: Custom E-Commerce & Gifting
+   - **Challenge**: Previously relied on manual Instagram DM customer inquiries and manual payment tracking.
+   - **Solution**: Built a complete e-commerce web application with automated storefront, payment processing, and admin management portal.
+   - **Results**: 100% automated ordering & payment flow; seamless operational transition to web.
+
+2. **Sangat Motor Centre** (`/projects/sangat-motor-centre`)
+   - **Industry**: Automotive Services (Patna, Bihar)
+   - **Solution**: Built a premium auto service website with 3D car configurator and 15-second appointment booking UX.
+   - **Results**: 4.9/5 online rating showcased; 5000+ satisfied customers highlighted.
+
+3. **Al Harmain Islamic Institute** (`/projects/coaching-institute-website`)
+   - **URL**: https://alharmainislamicinstitute.com/
+   - **Industry**: Education
+   - **Solution**: Student portal with automated lead capture and instant follow-ups.
+   - **Results**: 4x lead growth and 20 hours/week saved in administrative overhead.
+
+4. **Hygiena** (`/projects/e-commerce-platform`)
+   - **URL**: https://hygienaofficial.com/
+   - **Industry**: E-Commerce
+   - **Results**: 50% reduction in cart abandonment and sub-second page load times.
+
+## How to Work with InnVox
+
+- **Website as a Service (WaaS)**: Startup plan at ₹9,999/month, Professional plan at ₹19,999/month.
+- **Custom Projects**: Fixed price or milestone-based scoping.
+- **Contact**: Email `innvox.in.official@gmail.com` or WhatsApp `+91 9939 711942`.

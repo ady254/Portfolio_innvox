@@ -1,6 +1,22 @@
 
 
+import type { Metadata } from "next";
 import { CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Website as a Service & Subscription Plans",
+  description:
+    "Predictable monthly plans for custom web application development, maintenance, Meta ads management, and AI automations.",
+  alternates: {
+    canonical: "/subscription",
+  },
+  openGraph: {
+    title: "Subscription Plans | InnVox",
+    description:
+      "Website as a Service & AI Automation monthly growth packages.",
+    url: "https://innvox.in/subscription",
+  },
+};
 
 const Subscription = () => {
   const plans = [
