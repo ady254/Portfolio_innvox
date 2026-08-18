@@ -1,18 +1,18 @@
 "use client";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  CheckCircle, 
-  Loader2, 
-  AlertCircle, 
-  MessageCircle, 
-  User, 
-  Sparkles, 
-  Globe2, 
-  ChevronDown, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  CheckCircle,
+  Loader2,
+  AlertCircle,
+  MessageCircle,
+  User,
+  Sparkles,
+  Globe2,
+  ChevronDown,
   Send,
   Calendar,
   Clock,
@@ -134,7 +134,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -142,7 +142,7 @@ const ContactSection = () => {
           >
             <Sparkles className="w-4 h-4" /> Let&apos;s Collaborate
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -158,14 +158,14 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-7 bg-white dark:bg-gray-900/60 backdrop-blur-xl border border-gray-200/80 dark:border-gray-800/80 p-8 md:p-12 rounded-[32px] shadow-xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-bl-full pointer-events-none" />
-            
+
             <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-8">
               Start Your Project
             </h3>
@@ -249,9 +249,7 @@ const ContactSection = () => {
                     <option value="website" className="dark:bg-gray-900">Digital Platform Engineering</option>
                     <option value="ads" className="dark:bg-gray-900">Data-Driven Growth Engines</option>
                     <option value="whatsapp" className="dark:bg-gray-900">Agentic AI & Automations</option>
-                    <option value="development" className="dark:bg-gray-900">Custom Development</option>
-                    <option value="chatbot" className="dark:bg-gray-900">AI Chatbots & Voice Agents</option>
-                    <option value="maintenance" className="dark:bg-gray-900">Maintenance & Support</option>
+
                   </select>
                   <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none group-focus-within:text-blue-600 transition-colors" />
                 </div>
@@ -328,7 +326,7 @@ const ContactSection = () => {
 
               {/* Success Alert */}
               {success && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800/50 rounded-2xl flex items-start gap-3"
@@ -345,7 +343,7 @@ const ContactSection = () => {
 
               {/* Error Alert */}
               {error && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/50 rounded-2xl flex items-start gap-3"
@@ -376,7 +374,7 @@ const ContactSection = () => {
           </motion.div>
 
           {/* Right Column: Steps & Contact Details */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -402,7 +400,7 @@ const ContactSection = () => {
                 {formSteps.map((step, idx) => {
                   const IconComponent = step.icon;
                   return (
-                    <motion.div 
+                    <motion.div
                       key={step.step}
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
