@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
+import StrategyCallModal from "./StrategyCallModal";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -52,110 +54,119 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full py-5 bg-white/80 backdrop-blur-xl shadow-sm fixed top-0 z-50 border-b border-gray-200/50">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
-        <h1 className="text-2xl font-bold text-blue-600 relative z-50">
-          <Link href="/">
-            INN<span className="text-black">VOX</span>
-          </Link>
-        </h1>
+    <>
+      <StrategyCallModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-        <nav className="hidden md:flex gap-7 text-gray-700 font-medium mx-auto">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.link}
-              className="hover:text-blue-600 transition relative group"
-            >
-              {item.label}
-              <span className="absolute left-0 -bottom-1 w-0 group-hover:w-full transition-all duration-300 h-[2px] bg-blue-600" />
+      <header className="w-full py-5 bg-white/80 backdrop-blur-xl shadow-sm fixed top-0 z-50 border-b border-gray-200/50">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
+          <h1 className="text-2xl font-bold text-blue-600 relative z-50">
+            <Link href="/">
+              INN<span className="text-black">VOX</span>
             </Link>
-          ))}
-        </nav>
+          </h1>
 
-        <div className="flex items-center gap-3 relative z-50">
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20"
-          >
-            Book a Strategy Call
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-          <button
-            className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition z-50"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? (
-              <X className="w-6 h-6 text-gray-900" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-900" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
-            className="fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 pb-10 md:hidden h-screen"
-          >
-            <div className="flex flex-col space-y-6">
-              {navItems.map((item, index) => (
-                <motion.div key={item.label} variants={itemVariants}>
-                  <Link
-                    href={item.link}
-                    onClick={() => setMobileOpen(false)}
-                    className="group flex items-center gap-4 text-3xl sm:text-4xl font-bold text-gray-900 transition-colors hover:text-blue-600"
-                  >
-                    <span className="text-sm font-medium text-gray-400 font-mono pt-2">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              variants={itemVariants}
-              className="mt-auto border-t border-gray-100 pt-8"
-            >
+          <nav className="hidden md:flex gap-7 text-gray-700 font-medium mx-auto">
+            {navItems.map((item) => (
               <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-between w-full p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition group"
+                key={item.label}
+                href={item.link}
+                className="hover:text-blue-600 transition relative group"
               >
-                <span className="text-lg font-semibold text-gray-900">
-                  Start Your Project
-                </span>
-                <div className="p-2 rounded-full bg-blue-600 text-white group-hover:bg-blue-700 transition">
-                  <ArrowUpRight className="w-5 h-5" />
-                </div>
+                {item.label}
+                <span className="absolute left-0 -bottom-1 w-0 group-hover:w-full transition-all duration-300 h-[2px] bg-blue-600" />
               </Link>
+            ))}
+          </nav>
 
-              <div className="mt-8 flex justify-center gap-6 text-sm text-gray-400">
-                <Link href="/privacy" className="hover:text-gray-900 transition">
-                  Privacy
-                </Link>
-                <Link href="/terms" className="hover:text-gray-900 transition">
-                  Terms
-                </Link>
-                <a
-                  href="mailto:innvox.in.official@gmail.com"
-                  className="hover:text-gray-900 transition"
-                >
-                  innvox.in.official@gmail.com
-                </a>
+          <div className="flex items-center gap-3 relative z-50">
+            <button
+              id="navbar-book-strategy-call-btn"
+              onClick={() => setModalOpen(true)}
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20"
+            >
+              Book a Strategy Call
+              <ArrowUpRight className="w-4 h-4" />
+            </button>
+            <button
+              className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition z-50"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? (
+                <X className="w-6 h-6 text-gray-900" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-900" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className="fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 pb-10 md:hidden h-screen"
+            >
+              <div className="flex flex-col space-y-6">
+                {navItems.map((item, index) => (
+                  <motion.div key={item.label} variants={itemVariants}>
+                    <Link
+                      href={item.link}
+                      onClick={() => setMobileOpen(false)}
+                      className="group flex items-center gap-4 text-3xl sm:text-4xl font-bold text-gray-900 transition-colors hover:text-blue-600"
+                    >
+                      <span className="text-sm font-medium text-gray-400 font-mono pt-2">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
               </div>
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-auto border-t border-gray-100 pt-8"
+              >
+                {/* Mobile: Book a Strategy Call opens modal */}
+                <button
+                  id="mobile-book-strategy-call-btn"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setModalOpen(true);
+                  }}
+                  className="flex items-center justify-between w-full p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition group"
+                >
+                  <span className="text-lg font-semibold text-gray-900">
+                    Book a Strategy Call
+                  </span>
+                  <div className="p-2 rounded-full bg-blue-600 text-white group-hover:bg-blue-700 transition">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </button>
+
+                <div className="mt-8 flex justify-center gap-6 text-sm text-gray-400">
+                  <Link href="/privacy" className="hover:text-gray-900 transition">
+                    Privacy
+                  </Link>
+                  <Link href="/terms" className="hover:text-gray-900 transition">
+                    Terms
+                  </Link>
+                  <a
+                    href="mailto:innvox.in.official@gmail.com"
+                    className="hover:text-gray-900 transition"
+                  >
+                    innvox.in.official@gmail.com
+                  </a>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+          )}
+        </AnimatePresence>
+      </header>
+    </>
   );
 };
 

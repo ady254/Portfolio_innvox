@@ -157,7 +157,7 @@ export const PROJECT_DB: Record<string, Project> = {
     challenge: "Minara Gifting previously operated and sold custom gifting products primarily through Instagram DMs, making order management, payment tracking, and scaling operational processes highly manual.",
     solution: "We built a full e-commerce web application complete with a modern online storefront, integrated online payment processing, and a robust admin management portal for inventory, orders, and fulfillment.",
     results: ["100% Automated Storefront & Payment Processing", "Full Admin Portal for Inventory & Order Management", "Seamless Transition from Instagram Selling to Web Store"],
-    images: ["/Ecom.webp"],
+    images: ["/minara.webp"],
     video: null,
     stack: ["Next.js", "React", "Tailwind CSS", "Node.js", "Payment Gateways"],
     liveLink: "https://www.minaragifting.com/",

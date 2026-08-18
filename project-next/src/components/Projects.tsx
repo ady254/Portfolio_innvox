@@ -81,7 +81,7 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
       title: "Minara Gifting Store",
       industry: "E-commerce",
       tagline: "Full e-commerce platform & payment integration scaled from Instagram",
-      image: "/Ecom.webp",
+      image: "/minara.webp",
       video: null,
       slug: "minara-gifting-ecommerce",
       icon: <Globe className="w-5 h-5" />,
@@ -270,11 +270,26 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    {project.video && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-6">
+                    {project.video ? (
                       <span className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30 text-white font-bold text-sm">
                         <Play className="w-3 h-3 fill-current" /> Demo Available
                       </span>
+                    ) : <span />}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-2 bg-green-500/90 hover:bg-green-500 backdrop-blur-md px-3 py-1.5 rounded-full text-white font-bold text-xs transition-colors"
+                      >
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+                        </span>
+                        View Live Site
+                      </a>
                     )}
                   </div>
 
@@ -303,16 +318,20 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
                       href={`/projects/${project.slug}`}
                       className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-black text-sm uppercase tracking-widest hover:gap-4 transition-all"
                     >
-                      Learn more <ArrowUpRight className="w-5 h-5" />
+                      Case Study <ArrowUpRight className="w-5 h-5" />
                     </Link>
                     {project.liveLink && (
                       <a
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 font-bold text-xs uppercase tracking-widest transition-colors"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-900/60 font-bold text-xs transition-all"
                       >
-                        Live demo
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                        </span>
+                        Live Site
                       </a>
                     )}
                   </div>
