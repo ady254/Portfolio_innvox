@@ -20,9 +20,8 @@ const Navbar = () => {
   const navItems = [
     { label: "Services", link: "/services" },
     { label: "AI Solutions", link: "/ai-solutions" },
-    { label: "Projects", link: "/projects" },
+    { label: "Case Studies", link: "/projects" },
     { label: "About", link: "/about" },
-    { label: "Contact", link: "/contact" },
   ];
 
   const menuVariants: Variants = {

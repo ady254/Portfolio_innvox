@@ -152,13 +152,22 @@ const Hero: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Trust micro-signal */}
-            <motion.p
+            {/* Trust micro-signal & Urgency */}
+            <motion.div
               variants={wordVariants}
-              className="text-xs text-gray-400 font-medium"
+              className="flex flex-col items-center gap-3 pt-2"
             >
-              Free 30-min call · No commitment · Reply within 24&nbsp;hours
-            </motion.p>
+              <p className="text-xs text-gray-400 font-medium">
+                Free 30-min call · No commitment · Reply within 24&nbsp;hours
+              </p>
+              <div className="flex items-center gap-2 text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100 shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                3 client slots open this month — India & GCC brands only
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 

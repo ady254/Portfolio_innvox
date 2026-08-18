@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Users, Globe2, ArrowUpRight, Briefcase, Calendar } from "lucide-react";
+import { Users, Globe2, ArrowUpRight, Briefcase, Trophy } from "lucide-react";
 import Link from "next/link";
 import CoFounderPortrait from "@/components/CoFounderPortrait";
 
@@ -65,14 +65,14 @@ const metrics = [
     staticDisplay: null as string | null,
   },
   {
-    value: 2025,
+    value: 100,
     prefix: "",
-    suffix: "",
-    label: "Founded",
-    description: "Building digital systems since 2025",
-    icon: Calendar,
+    suffix: "%",
+    label: "Project Success",
+    description: "Delivered on-time & to-spec",
+    icon: Trophy,
     color: "from-violet-500 to-violet-600",
-    staticDisplay: "2025",
+    staticDisplay: null as string | null,
   },
 ];
 
