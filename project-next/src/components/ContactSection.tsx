@@ -465,9 +465,9 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/40 dark:bg-gray-900/20 backdrop-blur-sm flex items-start gap-4 hover:border-blue-500/50 transition-colors">
                 <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Email Us</p>
-                  <a href="mailto:innvox.in.official@gmail.com" className="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors mt-0.5 block">
+                  <a href="mailto:innvox.in.official@gmail.com" className="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors mt-0.5 block break-all">
                     innvox.in.official@gmail.com
                   </a>
                 </div>

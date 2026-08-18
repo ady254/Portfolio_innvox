@@ -90,26 +90,6 @@ export const PROJECT_DB: Record<string, Project> = {
       "High-Conversion Mobile Layout"
     ]
   },
-  "clinic-appointment-system": {
-    title: "Clinic Appointment System",
-    industry: "Healthcare",
-    tagline: "Streamlining Patient Care with AI",
-    challenge: "Patients faced long wait times on calls to book appointments, and no-show rates were high.",
-    solution: "An automated booking system with WhatsApp remainders and an AI chatbot to answer common queries 24/7.",
-    results: ["60% Reduction in No-Shows", "24/7 Booking Availability", "90% Automation of Routine Queries"],
-    images: ["/DentalFull.webp"],
-    video: "/dentalvid.webm",
-    stack: ["React", "OpenAI API", "Twilio", "MongoDB"],
-    liveLink: "https://dental-clinic-website-murex-rho.vercel.app/",
-    isConcept: true,
-    vision: "Automating the patient journey from first query to post-appointment follow-up using conversational AI.",
-    highlights: [
-      "Natural Language Query Processing",
-      "Real-time Calendar Synchronization",
-      "Automated WhatsApp Reminders",
-      "Secure Patient Data Storage"
-    ]
-  },
   "mobility-transportation-rentals": {
     title: "Mobility & Rental Platform",
     industry: "Transportation",
@@ -169,25 +149,5 @@ export const PROJECT_DB: Record<string, Project> = {
       role: "E-Commerce • minaragifting.com",
       image: "/innvox-favicon.svg"
     }
-  },
-  "gym-management-app": {
-    title: "Gym Management App",
-    industry: "Fitness",
-    tagline: "Digitizing Fitness Operations",
-    challenge: "The gym faced difficulties in member tracking, fee collection, and class scheduling using manual registers.",
-    solution: "A comprehensive management suite with member portals, automated billing, and QR-based attendance tracking.",
-    results: ["100% Automated Billing", "30% Increase in Member Retention", "Simplified Class Scheduling"],
-    images: ["/GymFull.webp"],
-    video: null,
-    stack: ["React Native", "Firebase", "Node.js"],
-    liveLink: "https://gym-subscription-platform.vercel.app/",
-    isConcept: true,
-    vision: "Empowering fitness business owners with data-driven insights and streamlined member management tools.",
-    highlights: [
-      "Automated Membership Renewals",
-      "QR Code Attendance System",
-      "Personalized Trainer Dashboards",
-      "Integrated Payment Gateways"
-    ]
   }
 };

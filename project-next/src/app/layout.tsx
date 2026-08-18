@@ -47,12 +47,21 @@ export const metadata: Metadata = {
     siteName: "InnVox",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://innvox.in/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "InnVox - Digital Engineering Agency",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "InnVox - Web, AI Automation & Digital Growth",
     description:
       "High-performance websites, AI agents, WhatsApp automation, and digital growth systems across India & the GCC.",
+    images: ["https://innvox.in/og-image.png"],
   },
 };
 

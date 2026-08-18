@@ -48,16 +48,6 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
       liveLink: "https://constrealstate.vercel.app/",
     },
     {
-      title: "Dental Platform System",
-      industry: "Healthcare",
-      tagline: "60% fewer no-shows with automated booking",
-      image: "/DentalFull.webp",
-      video: "/dentalvid.webm",
-      slug: "clinic-appointment-system",
-      icon: <Cpu className="w-5 h-5" />,
-      liveLink: "https://clinic-appointment-system.vercel.app/",
-    },
-    {
       title: "Mobility & Rental Platform",
       industry: "Transportation",
       tagline: "Paperless fleet management with real-time tracking",
@@ -86,16 +76,6 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
       slug: "minara-gifting-ecommerce",
       icon: <Globe className="w-5 h-5" />,
       liveLink: "https://www.minaragifting.com/",
-    },
-    {
-      title: "Gym Management App",
-      industry: "Fitness",
-      tagline: "100% automated billing and member retention",
-      image: "/GymFull.webp",
-      video: null,
-      slug: "gym-management-app",
-      icon: <Rocket className="w-5 h-5" />,
-      liveLink: "https://gym-subscription-platform.vercel.app/",
     },
   ];
 
