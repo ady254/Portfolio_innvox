@@ -91,10 +91,12 @@ export function Testimonial() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-black text-gray-900 mb-2">
-            Why Businesses Love InnVox
+          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-3">
+            <span className="bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent">Why Businesses Love </span>
+            <span className="text-blue-600">Inn</span>
+            <span className="bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent">Vox</span>
           </h2>
-          <p className="text-gray-500">Real feedback from real clients</p>
+          <p className="text-gray-500 font-medium text-lg">Real feedback from real clients</p>
         </motion.div>
 
         <div className="flex items-center justify-center">

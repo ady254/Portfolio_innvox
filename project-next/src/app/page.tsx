@@ -10,34 +10,66 @@ const faqJsonLd = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How much does a website cost in India?",
+      "name": "How long does it take to build a website or web app?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Website costs vary depending on complexity, features, and scale. We provide custom quotes after a free strategy call to ensure you get a high-performance platform tailored to your specific business needs."
+        "text": "Most projects are delivered within 2 to 4 weeks, depending on scope and complexity. A standard business website can be live in under 2 weeks. Custom web apps with integrations, dashboards, or e-commerce typically take 3 to 4 weeks."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does it take to build an e-commerce platform?",
+      "name": "How much does a website cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our average delivery time for a full-scale e-commerce platform with payment integrations is under 4 weeks. We prioritize speed without compromising on scalable architecture."
+        "text": "Pricing depends on your requirements, features, and scale. We provide a transparent quote after a free brainstorming session where we understand your goals. There are no hidden fees. We scope the work and agree on a fixed price before any code is written."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you work with clients in the UAE and Saudi Arabia?",
+      "name": "What happens in the brainstorming session?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we actively serve ambitious brands across India and the entire GCC region, including the UAE, Saudi Arabia, Qatar, and Bahrain."
+        "text": "The brainstorming session is a free 30-minute call where we discuss your business goals, target audience, required features, and timeline. We then provide a clear proposal with scope, timeline, and pricing. No commitment required."
       }
     },
     {
       "@type": "Question",
-      "name": "What makes InnVox different from other agencies?",
+      "name": "Do you work with clients outside India?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are a digital engineering agency, not just designers. We focus on outcome-driven solutions using the latest tech stacks (Next.js, React) and integrate cutting-edge AI automations and WhatsApp workflows to drive measurable revenue."
+        "text": "Yes. We serve ambitious brands across India and the entire GCC region, including the UAE, Saudi Arabia, Qatar, Bahrain, and Oman. Our remote-first process makes it easy to collaborate across time zones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What tech stack do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We build with modern, scalable technologies — primarily Next.js, React, and TypeScript for frontend. For backend and databases we use Node.js, Supabase, and PostgreSQL. We also integrate AI automations, WhatsApp workflows, and payment gateways."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide support after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every project includes a post-launch support period. We handle bug fixes, performance tuning, and minor updates. For ongoing maintenance and feature additions, we offer flexible retainer plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of businesses do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with startups, agencies, clinics, gyms, real estate firms, e-commerce brands, and service businesses. Our focus is on outcome-driven solutions, not just design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you build AI-powered features like chatbots or voice agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We build intelligent chatbots, WhatsApp bots, voice agents, and AI automation workflows. These systems handle customer queries, qualify leads, and run 24/7."
       }
     }
   ]
@@ -49,6 +81,7 @@ const Projects = dynamic(() => import("@/components/Projects"));
 const Testimonial = dynamic(() =>
   import("@/components/ui/design-testimonial").then((m) => ({ default: m.Testimonial }))
 );
+const FAQSection = dynamic(() => import("@/components/FAQSection"));
 const ContactSection = dynamic(() => import("@/components/ContactSection"));
 
 const Home = () => {
@@ -61,6 +94,7 @@ const Home = () => {
       <ServicesSection variant="home" />
       <Projects variant="home" />
       <Testimonial />
+      <FAQSection />
 
       <section className="py-24 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
