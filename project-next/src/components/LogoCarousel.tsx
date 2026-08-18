@@ -121,30 +121,6 @@ const LogoCarousel = () => {
         </div>
       </div>
 
-      {/* Stats strip */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-wrap justify-center gap-8 mt-10 px-6 text-center"
-      >
-        {[
-          { value: "8+", label: "Brands shipped" },
-          { value: "5", label: "Countries reached" },
-          { value: "100%", label: "Project success rate" },
-          { value: "< 4 wk", label: "Avg. delivery time" },
-        ].map((stat) => (
-          <div key={stat.label} className="flex flex-col items-center">
-            <span className="text-2xl md:text-3xl font-black text-gray-900">
-              {stat.value}
-            </span>
-            <span className="text-xs text-gray-400 font-medium mt-0.5">
-              {stat.label}
-            </span>
-          </div>
-        ))}
-      </motion.div>
 
       {/* Divider */}
       <div className="mt-12 max-w-5xl mx-auto px-6">
