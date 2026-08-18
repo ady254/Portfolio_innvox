@@ -49,36 +49,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       color: "from-cyan-500 to-blue-600",
       icon: MessageCircle,
     },
-    {
-      id: "maintenance",
-      title: "Maintenance & Support",
-      description:
-        "We don't disappear after launch. Ongoing updates, fixes, and scaling - we're still here.",
-      points: ["Monthly updates", "Bug fixes", "Hosting support"],
-      link: "/services#maintenance",
-      color: "from-emerald-500 to-emerald-700",
-      icon: Wrench,
-    },
-    {
-      id: "development",
-      title: "Custom Development",
-      description:
-        "When off-the-shelf doesn't cut it. Custom dashboards, tools, and integrations built for your business.",
-      points: ["Backend systems", "Dashboards", "APIs"],
-      link: "/services#development",
-      color: "from-orange-500 to-red-600",
-      icon: Code,
-    },
-    {
-      id: "chatbots",
-      title: "AI Chatbots & Voice Agents",
-      description:
-        "Stop doing manually what AI can handle. Smart agents that work while your team sleeps.",
-      points: ["Lead qualification", "FAQ answers", "24/7 support"],
-      link: "/ai-solutions",
-      color: "from-indigo-500 to-indigo-700",
-      icon: Bot,
-    },
+
+
   ];
 
   const containerVariants = {
@@ -102,11 +74,10 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
 
   return (
     <section
-      className={`overflow-hidden transition-colors duration-300 ${
-        isHome
+      className={`overflow-hidden transition-colors duration-300 ${isHome
           ? "py-24 bg-gray-50 dark:bg-gray-950"
           : "py-24 bg-white dark:bg-gray-900"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -122,15 +93,15 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
             </span>
           )}
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
-          Architecting Systems for 
+            Architecting Systems for
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-            Growth & Scale.
+              Growth & Scale.
             </span>
           </h2>
           {isHome && (
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            We deliver end-to-end digital infrastructure. From high-speed web platforms to agentic AI workflows, we build the systems that modern enterprises need to dominate their markets.
+              We deliver end-to-end digital infrastructure. From high-speed web platforms to agentic AI workflows, we build the systems that modern enterprises need to dominate their markets.
             </p>
           )}
         </motion.div>
