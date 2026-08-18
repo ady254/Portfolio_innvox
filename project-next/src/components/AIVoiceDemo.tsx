@@ -31,10 +31,10 @@ const AIVoiceDemo = ({ learnMoreHref }: AIVoiceDemoProps) => {
     useEffect(() => {
         // Initialize speech synthesis
         const synth = window.speechSynthesis;
-        const u = new SpeechSynthesisUtterance("Hello! I am InnVox AI. I can handle your customer calls, schedule appointments, and answer questions 24/7. How can I help you scale your business today?");
-        u.rate = 1.0;
-        u.pitch = 1.0;
-        u.volume = 1.0;
+        const u = new SpeechSynthesisUtterance("Hello! I am InnVox AI. I can handle your customer calls, schedule appointments, and answer questions 24/7.I handle all this but good things takes time so im really coming soon?");
+        u.rate = 4.0;
+        u.pitch = 3.0;
+        u.volume = 4.0;
 
         u.onstart = () => setStatus("speaking");
         u.onend = () => setStatus("idle");

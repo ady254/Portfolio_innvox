@@ -19,7 +19,7 @@ const sizeClasses = {
 };
 
 export default function CoFounderPortrait({
-  src = "/cofounder.png",
+  src = "/co-founder.webp",
   name = "Jaeed Akhtar",
   role = "CO-Founder & Lead Architect ",
   className = "",
@@ -50,16 +50,14 @@ export default function CoFounderPortrait({
         <div className="mt-5 text-center">
           {name && (
             <p
-              className={`text-sm font-semibold tracking-wide ${
-                variant === "dark" ? "text-white" : "text-gray-900"
-              }`}
+              className={`text-sm font-semibold tracking-wide ${variant === "dark" ? "text-white" : "text-gray-900"
+                }`}
             >
               {name}
             </p>
           )}
           {role && (
-            <p className={`mt-1 text-[11px] uppercase tracking-[0.2em] text-gray-500 ${
-                variant === "dark" ? "text-white" : "text-gray-900"
+            <p className={`mt-1 text-[11px] uppercase tracking-[0.2em] text-gray-500 ${variant === "dark" ? "text-white" : "text-gray-900"
               }`}
             >
               {role}

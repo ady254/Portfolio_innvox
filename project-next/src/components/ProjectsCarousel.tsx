@@ -21,12 +21,6 @@ const ProjectsCarousel = () => {
       slug: "real-estate-landing",
     },
     {
-      title: "Clinic Appointment System",
-      industry: "Healthcare",
-      image: "/dentalfront.webp",
-      slug: "clinic-appointment-system",
-    },
-    {
       title: "E-commerce Platform",
       industry: "E-commerce",
       image: "/E-com.webp",
