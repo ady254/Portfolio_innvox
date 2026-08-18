@@ -16,6 +16,8 @@ import {
   Globe
 } from "lucide-react";
 import { PROJECT_DB, Project } from "./projectData";
+import StrategyCallModal from "@/components/StrategyCallModal";
+import { useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -28,6 +30,7 @@ const staggerContainer = {
 
 export default function ProjectSlugClient({ slug }: { slug: string }) {
   const project: Project | undefined = PROJECT_DB[slug];
+  const [modalOpen, setModalOpen] = useState(false);
 
   if (!project) {
     return (
@@ -300,16 +303,20 @@ export default function ProjectSlugClient({ slug }: { slug: string }) {
 
       {/* CTA SECTION */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <StrategyCallModal open={modalOpen} onClose={() => setModalOpen(false)} />
         <div className="absolute inset-0 bg-blue-600/10"></div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">Need a {project.industry} Solution?</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6">Need a {project.industry} solution?</h2>
           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
             We can build a similar custom solution for your business in less than 4 weeks. Let&apos;s talk about your requirements.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 hover:bg-blue-50 rounded-2xl font-bold text-lg shadow-xl hover:scale-105 transition-all">
-              Get a Free Quote <ArrowRight className="w-5 h-5" />
-            </Link>
+            <button
+              onClick={() => setModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 hover:bg-blue-50 rounded-2xl font-bold text-lg shadow-xl hover:scale-105 transition-all cursor-pointer"
+            >
+              Book a Free Strategy Call <ArrowRight className="w-5 h-5" />
+            </button>
             <Link href="/projects" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-bold border border-slate-700 hover:bg-slate-800 text-white transition-all">
               View More Projects
             </Link>

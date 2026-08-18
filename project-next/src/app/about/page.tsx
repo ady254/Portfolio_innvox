@@ -4,14 +4,14 @@ import AboutClient from "./AboutClient";
 export const metadata: Metadata = {
   title: "About Us & Engineering Vision",
   description:
-    "Learn about InnVox, our engineering team, co-founders, and our mission building high-performance web platforms and AI automation systems across India and the GCC.",
+    "InnVox helps businesses turn websites into lead machines and automate the rest. Learn about our team, our approach, and why we're the digital engineering partner for India & GCC.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About Us | InnVox Digital Engineering Agency",
     description:
-      "Engineers building Next-Gen Web Platforms, Agentic AI, and Automation Systems for India & GCC businesses.",
+      "We turn websites into lead machines and automate the rest. Digital engineering for India & GCC businesses.",
     url: "https://innvox.in/about",
   },
 };

@@ -23,8 +23,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "website",
       title: "Digital Platform Engineering",
       description:
-        "We engineer custom, high-performance web applications that serve as the ultimate conversion engine for your brand. Zero templates, purely scalable architecture.",
-      points: ["High-Conversion UX/UI Design", "Next-Gen Tech Stack (Next.js/React)", "Managed Cloud Infrastructure"],
+        "Custom-built websites and web apps that look professional, load fast, and turn visitors into paying customers. No templates — built around your business.",
+      points: ["Design that converts visitors to leads", "Fast, mobile-friendly, SEO-ready", "E-commerce, dashboards, booking systems"],
       link: "/services#website",
       color: "from-blue-500 to-blue-700",
       icon: Globe,
@@ -33,8 +33,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "ads",
       title: "Data-Driven Growth Engines",
       description:
-        "Stop wasting ad spend. We build precision-targeted acquisition campaigns that drive high-intent traffic directly into your new digital platforms.",
-      points: ["Omnichannel Acquisition Strategy", "Advanced Lead Tracking & Attribution", "Conversion Rate Optimization (CRO)"],
+        "Meta & Google ads that actually bring in customers — not just clicks. We target the right people, track every lead, and optimize until your cost per lead drops.",
+      points: ["Targeted Meta & Google ad campaigns", "Track which ads bring real customers", "Lower your cost per lead over time"],
       link: "/services#ads",
       color: "from-purple-500 to-purple-700",
       icon: Megaphone,
@@ -43,8 +43,8 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
       id: "whatsapp",
       title: "Agentic AI & Automations",
       description:
-        "Deploy intelligent workflows that work while you sleep. We integrate custom AI agents into WhatsApp to handle lead qualification and customer success 24/7.",
-      points: ["24/7 Automated Lead Routing", "Complex CRM & API Integrations", "Conversational Sales Funnels"],
+        "AI chatbots and WhatsApp automations that reply to leads, answer questions, and route enquiries — even while you sleep. Set it up once, run it 24/7.",
+      points: ["Instant replies to WhatsApp enquiries", "Qualify and route leads automatically", "Connect to your CRM and tools"],
       link: "/services#whatsapp",
       color: "from-cyan-500 to-blue-600",
       icon: MessageCircle,
@@ -93,10 +93,10 @@ const ServicesSection = ({ variant = "page" }: ServicesSectionProps) => {
             </span>
           )}
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
-            Architecting Systems for
+            What we build for you
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-              Growth & Scale.
+              and how it grows your business.
             </span>
           </h2>
           {isHome && (

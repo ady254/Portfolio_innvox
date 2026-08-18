@@ -4,8 +4,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, Play, Layout, Cpu, Globe, Rocket, Car } from "lucide-react";
+import { ArrowUpRight, Play, Layout, Cpu, Globe, Rocket, Car, ArrowRight } from "lucide-react";
 import DepthBlurCarousel from "./DepthBlurCarousel";
+import StrategyCallModal from "./StrategyCallModal";
 
 interface ProjectsProps {
   variant?: "home" | "full";
@@ -15,6 +16,7 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
   const isHome = variant === "home";
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const items = [
     {
@@ -97,6 +99,8 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
   };
 
   return (
+    <>
+    <StrategyCallModal open={modalOpen} onClose={() => setModalOpen(false)} />
     <section className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-500 overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-blue-100/50 dark:bg-blue-900/10 rounded-full blur-3xl animate-pulse" />
@@ -133,10 +137,9 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
             {[
               "Automotive",
               "Education",
-              "Healthcare",
               "Real Estate",
               "E-commerce",
-              "Fitness",
+              "Transportation",
             ].map((industry, idx) => (
               <motion.span
                 key={industry}
@@ -330,22 +333,22 @@ const Projects = ({ variant = "full" }: ProjectsProps) => {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
             <div className="relative z-10">
-              <h3 className="text-3xl font-black mb-4">Have a Vision?</h3>
+              <h3 className="text-3xl font-black mb-4">Want a similar solution for your business?</h3>
               <p className="text-blue-100 mb-8 max-w-xl mx-auto font-medium">
-                We specialize in turning complex ideas into seamless digital
-                experiences. Let&apos;s discuss your next project.
+                We build custom web platforms, AI automations, and growth systems. Let&apos;s talk about what your business needs.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-10 py-4 bg-white text-blue-700 font-black rounded-2xl shadow-xl hover:scale-105 transition-transform"
+              <button
+                onClick={() => setModalOpen(true)}
+                className="inline-flex items-center gap-2 px-10 py-4 bg-white text-blue-700 font-black rounded-2xl shadow-xl hover:scale-105 transition-transform cursor-pointer"
               >
-                Start Your Journey <Rocket className="w-5 h-5" />
-              </Link>
+                Book a Free Strategy Call <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
           </motion.div>
         ) : null}
       </div>
     </section>
+    </>
   );
 };
 
