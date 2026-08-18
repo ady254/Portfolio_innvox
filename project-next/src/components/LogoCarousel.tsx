@@ -49,8 +49,8 @@ const clients = [
 
 ];
 
-// Double for seamless infinite marquee
-const track = [...clients, ...clients];
+// Quadruple for seamless infinite marquee with fewer items
+const track = [...clients, ...clients, ...clients, ...clients];
 
 const LogoCarousel = () => {
   return (
@@ -91,14 +91,14 @@ const LogoCarousel = () => {
               aria-label={`${client.name} — ${client.industry}`}
               className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300 shrink-0 cursor-pointer"
             >
-              {/* Monogram avatar or Image */}
+              {/* Logo Image or Monogram */}
               {client.image ? (
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-sm overflow-hidden bg-white border border-gray-100 p-1">
-                  <img src={client.image} alt={client.name} className="w-full h-full object-contain" />
+                <div className="h-8 w-16 md:w-20 shrink-0 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                  <img src={client.image} alt={client.name} className="max-h-full max-w-full object-contain" />
                 </div>
               ) : (
                 <div
-                  className={`w-9 h-9 rounded-xl bg-gradient-to-br ${client.accent} flex items-center justify-center text-white font-black text-xs shrink-0 shadow-sm`}
+                  className={`w-9 h-9 rounded-xl bg-gradient-to-br ${client.accent} flex items-center justify-center text-white font-black text-xs shrink-0 shadow-sm grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500`}
                 >
                   {client.initial}
                 </div>
@@ -106,7 +106,7 @@ const LogoCarousel = () => {
 
               {/* Name + industry */}
               <div className="leading-tight">
-                <p className="text-sm font-black text-gray-900 whitespace-nowrap group-hover:text-blue-600 transition-colors">
+                <p className="text-sm font-medium text-gray-800 whitespace-nowrap group-hover:text-blue-600 transition-colors">
                   {client.name}
                 </p>
                 <p className="text-[10px] text-gray-400 font-medium whitespace-nowrap">
